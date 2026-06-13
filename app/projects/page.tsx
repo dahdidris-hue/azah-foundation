@@ -16,6 +16,21 @@ export default function ProjectsPage() {
       sdgs: ["SDG 5", "SDG 3", "SDG 4", "SDG 8", "SDG 16"],
     },
     {
+      title: "Children’s Cancer Hospital",
+      status: "Planning Phase",
+      tag: "Healthcare Project",
+      description:
+        "A specialized healthcare project dedicated to improving access to cancer diagnosis, treatment, care, and psychosocial support for children affected by cancer in Sudan.",
+      focus: [
+        "Paediatric cancer care",
+        "Diagnosis and treatment support",
+        "Psychosocial support for children and families",
+        "Referral pathways and continuity of care",
+        "Health system strengthening for child oncology",
+      ],
+      sdgs: ["SDG 3", "SDG 10"],
+    },
+    {
       title: "Rehabilitation & Mental Health Centre",
       status: "Planning Phase",
       tag: "Recovery Project",

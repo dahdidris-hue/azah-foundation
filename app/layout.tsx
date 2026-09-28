@@ -158,37 +158,6 @@ export default function RootLayout({
                 </div>
 
                 <div>
-                  <p className="text-white font-medium mb-1">Phone</p>
-
-                  <a
-                    href="tel:+249900980672"
-                    className="hover:text-white transition"
-                  >
-                    +249900980672
-                  </a>
-                </div>
-
-                <div>
-                  <p className="text-white font-medium mb-1">WhatsApp</p>
-
-                  <div className="flex flex-col gap-1">
-                    <a
-                      href="https://wa.me/41793404130"
-                      className="hover:text-white transition"
-                    >
-                      +41793404130
-                    </a>
-
-                    <a
-                      href="https://wa.me/447475205841"
-                      className="hover:text-white transition"
-                    >
-                      +447475205841
-                    </a>
-                  </div>
-                </div>
-
-                <div>
                   <p className="text-white font-medium mb-1">Location</p>
 
                   <p>Khartoum, Sudan</p>

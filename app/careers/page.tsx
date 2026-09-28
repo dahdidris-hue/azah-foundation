@@ -397,19 +397,30 @@ function ApplicationModal({
 }) {
   const [educationCount, setEducationCount] = useState(1);
   const [experienceCount, setExperienceCount] = useState(1);
+  const [formValues, setFormValues] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const updateField = (name: string, value: string) => {
+    setFormValues((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
+    const payload = new FormData();
+    payload.append("role", role.title);
+
+    Object.entries(formValues).forEach(([name, value]) => {
+      payload.append(name, value);
+    });
+
     try {
-      const formData = new FormData(event.currentTarget);
       const response = await fetch("https://formspree.io/f/xppwkzjk", {
         method: "POST",
-        body: formData,
+        body: payload,
         headers: {
           Accept: "application/json",
         },
@@ -494,19 +505,18 @@ function ApplicationModal({
             </div>
 
             <form onSubmit={handleSubmit} className="bg-white rounded-[32px] border border-[#E5DED3] p-8 md:p-10">
-              <input type="hidden" name="role" value={role.title} />
               {step === 1 && (
                 <div>
                   <h3 className="text-3xl font-bold mb-8">Personal Details</h3>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <Field name="full_name" label="Full Name" placeholder="Full name" />
-                    <Field name="email" label="Email Address" placeholder="Email" />
-                    <Field name="phone" label="Phone Number" placeholder="Phone" />
-                    <Field name="whatsapp" label="WhatsApp Number" placeholder="WhatsApp" />
-                    <Field name="nationality" label="Nationality" placeholder="Nationality" />
-                    <Field name="country_of_residence" label="Country of Residence" placeholder="Country" />
-                    <Field name="city" label="City" placeholder="City" />
-                    <Field name="linkedin_portfolio" label="LinkedIn / Portfolio" placeholder="Optional link" />
+                    <Field name="full_name" label="Full Name" placeholder="Full name" value={formValues.full_name || ""} onChange={updateField} />
+                    <Field name="email" label="Email Address" placeholder="Email" value={formValues.email || ""} onChange={updateField} />
+                    <Field name="phone" label="Phone Number" placeholder="Phone" value={formValues.phone || ""} onChange={updateField} />
+                    <Field name="whatsapp" label="WhatsApp Number" placeholder="WhatsApp" value={formValues.whatsapp || ""} onChange={updateField} />
+                    <Field name="nationality" label="Nationality" placeholder="Nationality" value={formValues.nationality || ""} onChange={updateField} />
+                    <Field name="country_of_residence" label="Country of Residence" placeholder="Country" value={formValues.country_of_residence || ""} onChange={updateField} />
+                    <Field name="city" label="City" placeholder="City" value={formValues.city || ""} onChange={updateField} />
+                    <Field name="linkedin_portfolio" label="LinkedIn / Portfolio" placeholder="Optional link" value={formValues.linkedin_portfolio || ""} onChange={updateField} />
                   </div>
                 </div>
               )}
@@ -523,12 +533,12 @@ function ApplicationModal({
                       <div key={index} className="bg-[#F7F4EE] border border-[#E5DED3] rounded-[28px] p-6">
                         <h4 className="text-xl font-bold mb-6">Education {index + 1}</h4>
                         <div className="grid md:grid-cols-2 gap-6">
-                          <Field name={`education_${index + 1}_institution`} label="University / Institution" placeholder="University name" />
-                          <Field name={`education_${index + 1}_degree`} label="Degree" placeholder="Degree title" />
-                          <Field name={`education_${index + 1}_field`} label="Field of Study" placeholder="Field" />
-                          <Field name={`education_${index + 1}_country`} label="Country" placeholder="Country" />
-                          <Field name={`education_${index + 1}_start_date`} label="Start Date" placeholder="Month / Year" />
-                          <Field name={`education_${index + 1}_end_date`} label="End Date" placeholder="Month / Year or Present" />
+                          <Field name={`education_${index + 1}_institution`} label="University / Institution" placeholder="University name" value={formValues[`education_${index + 1}_institution`] || ""} onChange={updateField} />
+                          <Field name={`education_${index + 1}_degree`} label="Degree" placeholder="Degree title" value={formValues[`education_${index + 1}_degree`] || ""} onChange={updateField} />
+                          <Field name={`education_${index + 1}_field`} label="Field of Study" placeholder="Field" value={formValues[`education_${index + 1}_field`] || ""} onChange={updateField} />
+                          <Field name={`education_${index + 1}_country`} label="Country" placeholder="Country" value={formValues[`education_${index + 1}_country`] || ""} onChange={updateField} />
+                          <Field name={`education_${index + 1}_start_date`} label="Start Date" placeholder="Month / Year" value={formValues[`education_${index + 1}_start_date`] || ""} onChange={updateField} />
+                          <Field name={`education_${index + 1}_end_date`} label="End Date" placeholder="Month / Year or Present" value={formValues[`education_${index + 1}_end_date`] || ""} onChange={updateField} />
                         </div>
                       </div>
                     ))}
@@ -552,14 +562,14 @@ function ApplicationModal({
                       <div key={index} className="bg-[#F7F4EE] border border-[#E5DED3] rounded-[28px] p-6">
                         <h4 className="text-xl font-bold mb-6">Experience {index + 1}</h4>
                         <div className="grid md:grid-cols-2 gap-6">
-                          <Field name={`experience_${index + 1}_organization`} label="Organization" placeholder="Organization name" />
-                          <Field name={`experience_${index + 1}_job_title`} label="Job Title / Role" placeholder="Role title" />
-                          <Field name={`education_${index + 1}_country`} label="Country" placeholder="Country" />
-                          <Field name={`experience_${index + 1}_employment_type`} label="Employment Type" placeholder="Full-time, volunteer, internship..." />
-                          <Field name={`education_${index + 1}_start_date`} label="Start Date" placeholder="Month / Year" />
-                          <Field name={`education_${index + 1}_end_date`} label="End Date" placeholder="Month / Year or Present" />
-                          <TextArea name={`experience_${index + 1}_responsibilities`} label="Main Responsibilities" placeholder="Briefly describe your main responsibilities" />
-                          <TextArea name={`experience_${index + 1}_achievements`} label="Key Achievements" placeholder="Briefly describe relevant achievements" />
+                          <Field name={`experience_${index + 1}_organization`} label="Organization" placeholder="Organization name" value={formValues[`experience_${index + 1}_organization`] || ""} onChange={updateField} />
+                          <Field name={`experience_${index + 1}_job_title`} label="Job Title / Role" placeholder="Role title" value={formValues[`experience_${index + 1}_job_title`] || ""} onChange={updateField} />
+                          <Field name={`experience_${index + 1}_country`} label="Country" placeholder="Country" value={formValues[`experience_${index + 1}_country`] || ""} onChange={updateField} />
+                          <Field name={`experience_${index + 1}_employment_type`} label="Employment Type" placeholder="Full-time, volunteer, internship..." value={formValues[`experience_${index + 1}_employment_type`] || ""} onChange={updateField} />
+                          <Field name={`experience_${index + 1}_start_date`} label="Start Date" placeholder="Month / Year" value={formValues[`experience_${index + 1}_start_date`] || ""} onChange={updateField} />
+                          <Field name={`experience_${index + 1}_end_date`} label="End Date" placeholder="Month / Year or Present" value={formValues[`experience_${index + 1}_end_date`] || ""} onChange={updateField} />
+                          <TextArea name={`experience_${index + 1}_responsibilities`} label="Main Responsibilities" placeholder="Briefly describe your main responsibilities" value={formValues[`experience_${index + 1}_responsibilities`] || ""} onChange={updateField} />
+                          <TextArea name={`experience_${index + 1}_achievements`} label="Key Achievements" placeholder="Briefly describe relevant achievements" value={formValues[`experience_${index + 1}_achievements`] || ""} onChange={updateField} />
                         </div>
                       </div>
                     ))}
@@ -578,9 +588,9 @@ function ApplicationModal({
               {step === 4 && (
                 <div>
                   <h3 className="text-3xl font-bold mb-8">Letter of Motivation</h3>
-                  <TextArea name="motivation" label="Why are you interested in this role?" placeholder="Tell us why you would like to volunteer with Azah and how your skills can support this role." />
-                  <TextArea name="relevant_skills" label="Relevant Skills" placeholder="List your strongest skills for this position." />
-                  <TextArea name="availability" label="Availability" placeholder="Tell us your weekly availability and preferred working hours." />
+                  <TextArea name="motivation" label="Why are you interested in this role?" placeholder="Tell us why you would like to volunteer with Azah and how your skills can support this role." value={formValues.motivation || ""} onChange={updateField} />
+                  <TextArea name="relevant_skills" label="Relevant Skills" placeholder="List your strongest skills for this position." value={formValues.relevant_skills || ""} onChange={updateField} />
+                  <TextArea name="availability" label="Availability" placeholder="Tell us your weekly availability and preferred working hours." value={formValues.availability || ""} onChange={updateField} />
                 </div>
               )}
 
@@ -588,12 +598,12 @@ function ApplicationModal({
                 <div>
                   <h3 className="text-3xl font-bold mb-8">Reference Contact</h3>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <Field name="reference_full_name" label="Reference Full Name" placeholder="Name" />
-                    <Field name="reference_title" label="Reference Title" placeholder="Job title" />
-                    <Field name="reference_email" label="Reference Email" placeholder="Email" />
-                    <Field name="reference_phone" label="Reference Phone Number" placeholder="Phone" />
-                    <Field name="reference_organization" label="Organization" placeholder="Organization" />
-                    <Field name="reference_relationship" label="Relationship to Applicant" placeholder="Supervisor, professor, colleague..." />
+                    <Field name="reference_full_name" label="Reference Full Name" placeholder="Name" value={formValues.reference_full_name || ""} onChange={updateField} />
+                    <Field name="reference_title" label="Reference Title" placeholder="Job title" value={formValues.reference_title || ""} onChange={updateField} />
+                    <Field name="reference_email" label="Reference Email" placeholder="Email" value={formValues.reference_email || ""} onChange={updateField} />
+                    <Field name="reference_phone" label="Reference Phone Number" placeholder="Phone" value={formValues.reference_phone || ""} onChange={updateField} />
+                    <Field name="reference_organization" label="Organization" placeholder="Organization" value={formValues.reference_organization || ""} onChange={updateField} />
+                    <Field name="reference_relationship" label="Relationship to Applicant" placeholder="Supervisor, professor, colleague..." value={formValues.reference_relationship || ""} onChange={updateField} />
                   </div>
 
                   <div className="mt-10 bg-[#F7F4EE] border border-[#E5DED3] rounded-[24px] p-6 text-[#4A5565] leading-8">
@@ -637,20 +647,58 @@ function ApplicationModal({
   );
 }
 
-function Field({ name, label, placeholder }: { name: string; label: string; placeholder: string }) {
+function Field({
+  name,
+  label,
+  placeholder,
+  value,
+  onChange,
+}: {
+  name: string;
+  label: string;
+  placeholder: string;
+  value: string;
+  onChange: (name: string, value: string) => void;
+}) {
   return (
     <div>
       <label className="block text-sm font-semibold mb-3">{label}</label>
-      <input name={name} type="text" placeholder={placeholder} className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition" />
+      <input
+        name={name}
+        type="text"
+        value={value}
+        onChange={(e) => onChange(name, e.target.value)}
+        placeholder={placeholder}
+        className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition"
+      />
     </div>
   );
 }
 
-function TextArea({ name, label, placeholder }: { name: string; label: string; placeholder: string }) {
+function TextArea({
+  name,
+  label,
+  placeholder,
+  value,
+  onChange,
+}: {
+  name: string;
+  label: string;
+  placeholder: string;
+  value: string;
+  onChange: (name: string, value: string) => void;
+}) {
   return (
     <div className="md:col-span-2 mb-6">
       <label className="block text-sm font-semibold mb-3">{label}</label>
-      <textarea name={name} rows={5} placeholder={placeholder} className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition resize-none" />
+      <textarea
+        name={name}
+        rows={5}
+        value={value}
+        onChange={(e) => onChange(name, e.target.value)}
+        placeholder={placeholder}
+        className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition resize-none"
+      />
     </div>
   );
 }

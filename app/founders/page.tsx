@@ -93,7 +93,7 @@ export default function FoundersPage() {
               >
                 {`نحن في مؤسّسه عزه الخيريه نؤمن ايماناً قاطعا بان خدمه الإنسان في جميع احتياجاته هي مسؤليه أخلاقيه وإنسانيه
 لذلك فإننا نعمل علي تسخير قدراتنا علي نحقيق هذا الطموح
-نامل علي تحويل هذا الطموح لعمل يعيد بناء حياه هذا الوطن الحبيب`}
+نامل علي تحويل هذا الطموح لعمل يعيد بناء الحياة الكريمه لإنسان هذا الوطن.`}
               </div>
             </div>
           </div>
@@ -137,13 +137,6 @@ export default function FoundersPage() {
                 <p className="font-semibold">Co-Founder</p>
                 <p dir="rtl" className="text-[#6B7280] text-sm mt-1 text-left">
                   المؤسِّسة المشاركة
-                </p>
-              </div>
-
-              <div>
-                <p className="font-semibold">External Relations Expert</p>
-                <p dir="rtl" className="text-[#6B7280] text-sm mt-1 text-left">
-                  خبيرة العلاقات الخارجية
                 </p>
               </div>
             </div>

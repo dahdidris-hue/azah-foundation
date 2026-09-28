@@ -133,7 +133,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-5 md:px-8 py-10 md:py-16 grid sm:grid-cols-2 lg:grid-cols-[1.1fr_0.8fr_1.5fr_1.1fr] gap-10 md:gap-14">
             <div>
               <Image
-                src="/azah-logo.png"
+                src="/azah-logo-transparent.png"
                 alt="Azah Charitable Foundation"
                 width={110}
                 height={110}

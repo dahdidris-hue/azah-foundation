@@ -38,9 +38,13 @@ export default function RootLayout({
               </div>
             </a>
 
-            <nav className="hidden md:flex items-center gap-8 text-[#1E2A44] text-base font-bold">
+            <nav className="hidden md:flex items-center gap-6 text-[#1E2A44] text-base font-bold">
               <a href="/about" className="hover:text-[#556F2B] transition">
                 About
+              </a>
+
+              <a href="/founders" className="hover:text-[#556F2B] transition">
+                Founders
               </a>
 
               <a href="/projects" className="hover:text-[#556F2B] transition">
@@ -87,6 +91,10 @@ export default function RootLayout({
             <nav className="px-5 py-4 flex items-center gap-5 overflow-x-auto whitespace-nowrap text-sm font-semibold text-[#1E2A44]">
               <a href="/about" className="hover:text-[#556F2B] transition">
                 About
+              </a>
+
+              <a href="/founders" className="hover:text-[#556F2B] transition">
+                Founders
               </a>
 
               <a href="/projects" className="hover:text-[#556F2B] transition">
@@ -144,6 +152,10 @@ export default function RootLayout({
               <div className="flex flex-col gap-3 text-sm text-[#D6D9E0]">
                 <a href="/about" className="hover:text-white transition">
                   About
+                </a>
+
+                <a href="/founders" className="hover:text-white transition">
+                  Founders
                 </a>
 
                 <a href="/projects" className="hover:text-white transition">

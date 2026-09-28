@@ -16,14 +16,15 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-[#F7F4EE] text-[#1E2A44]">
         <header className="bg-white border-b border-[#E5DED3]">
-          <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between gap-10">
-            <a href="/" className="flex items-center gap-6">
+          <div className="max-w-7xl mx-auto px-5 md:px-8 py-3 md:py-5 flex items-center justify-between gap-4 md:gap-10">
+            <a href="/" className="flex items-center gap-4 md:gap-6">
               <Image
                 src="/azah-logo.png"
                 alt="Azah Charitable Foundation"
                 width={400}
                 height={400}
-                className="h-44 w-auto object-contain"
+                className="h-24 sm:h-28 md:h-36 lg:h-44 w-auto object-contain"
+                priority
               />
 
               <div className="hidden lg:block border-l border-[#E5DED3] pl-6">
@@ -80,12 +81,48 @@ export default function RootLayout({
               </a>
             </nav>
           </div>
+
+          {/* Mobile navigation */}
+          <div className="md:hidden border-t border-[#E5DED3]">
+            <nav className="px-5 py-4 flex items-center gap-5 overflow-x-auto whitespace-nowrap text-sm font-semibold text-[#1E2A44]">
+              <a href="/about" className="hover:text-[#556F2B] transition">
+                About
+              </a>
+
+              <a href="/projects" className="hover:text-[#556F2B] transition">
+                Projects
+              </a>
+
+              <a href="/careers" className="hover:text-[#556F2B] transition">
+                Careers
+              </a>
+
+              <a href="/contact" className="hover:text-[#556F2B] transition">
+                Contact
+              </a>
+
+              <a
+                href="/donate"
+                className="bg-[#1E2A44] text-white px-4 py-2 rounded-full"
+              >
+                Donate
+              </a>
+            </nav>
+
+            <div className="px-5 pb-4 flex items-center gap-3 text-xs font-semibold text-[#556F2B]">
+              <a href="/">EN</a>
+              <span className="text-[#CFC7BA]">|</span>
+              <a href="/ar">AR</a>
+              <span className="text-[#CFC7BA]">|</span>
+              <a href="/fr">FR</a>
+            </div>
+          </div>
         </header>
 
         <main>{children}</main>
 
         <footer className="bg-[#1E2A44] text-white mt-0">
-          <div className="max-w-7xl mx-auto px-8 py-16 grid lg:grid-cols-[1.1fr_0.8fr_1.5fr_1.1fr] gap-14">
+          <div className="max-w-7xl mx-auto px-5 md:px-8 py-10 md:py-16 grid sm:grid-cols-2 lg:grid-cols-[1.1fr_0.8fr_1.5fr_1.1fr] gap-10 md:gap-14">
             <div>
               <Image
                 src="/azah-logo.png"
@@ -95,7 +132,7 @@ export default function RootLayout({
                 className="mb-6"
               />
 
-              <p className="text-sm leading-8 text-[#D6D9E0] max-w-xs">
+              <p className="text-sm leading-7 md:leading-8 text-[#D6D9E0] max-w-xs">
                 Restoring dignity, protection, resilience, and sustainable
                 recovery for vulnerable communities across Sudan.
               </p>
@@ -138,7 +175,7 @@ export default function RootLayout({
 
                   <a
                     href="mailto:Azah@azahcharitablefoundation.com"
-                    className="hover:text-white transition text-[13px] whitespace-nowrap"
+                    className="hover:text-white transition text-[13px] break-all sm:break-normal"
                   >
                     Azah@azahcharitablefoundation.com
                   </a>
@@ -151,7 +188,7 @@ export default function RootLayout({
 
                   <a
                     href="mailto:Dahdkamilidris@azahcharitablefoundation.com"
-                    className="hover:text-white transition text-[13px] whitespace-nowrap"
+                    className="hover:text-white transition text-[13px] break-all sm:break-normal"
                   >
                     Dahdkamilidris@azahcharitablefoundation.com
                   </a>
@@ -170,7 +207,7 @@ export default function RootLayout({
                 Support Our Mission
               </h3>
 
-              <p className="text-sm leading-8 text-[#D6D9E0] mb-6 max-w-xs">
+              <p className="text-sm leading-7 md:leading-8 text-[#D6D9E0] mb-6 max-w-xs">
                 Help support protection, healthcare, shelter, resilience,
                 recovery, and humanitarian response efforts across Sudan.
               </p>
@@ -185,7 +222,7 @@ export default function RootLayout({
           </div>
 
           <div className="border-t border-[#2F3A55]">
-            <div className="max-w-7xl mx-auto px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#B7BFCE]">
+            <div className="max-w-7xl mx-auto px-5 md:px-8 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-4 text-xs md:text-sm text-[#B7BFCE]">
               <p>
                 © 2026 Azah Charitable Foundation Sudan. All rights reserved.
               </p>

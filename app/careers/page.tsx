@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import type { FormEvent } from "react";
 
 type Role = {
   title: string;
@@ -396,6 +397,35 @@ function ApplicationModal({
 }) {
   const [educationCount, setEducationCount] = useState(1);
   const [experienceCount, setExperienceCount] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const formData = new FormData(event.currentTarget);
+      const response = await fetch("https://formspree.io/f/xppwkzjk", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      setSubmitStatus("success");
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const activities = getRoleActivities(role);
   const outcome = getRoleOutcome(role);
@@ -463,19 +493,20 @@ function ApplicationModal({
               )}
             </div>
 
-            <form className="bg-white rounded-[32px] border border-[#E5DED3] p-8 md:p-10">
+            <form onSubmit={handleSubmit} className="bg-white rounded-[32px] border border-[#E5DED3] p-8 md:p-10">
+              <input type="hidden" name="role" value={role.title} />
               {step === 1 && (
                 <div>
                   <h3 className="text-3xl font-bold mb-8">Personal Details</h3>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <Field label="Full Name" placeholder="Full name" />
-                    <Field label="Email Address" placeholder="Email" />
-                    <Field label="Phone Number" placeholder="Phone" />
-                    <Field label="WhatsApp Number" placeholder="WhatsApp" />
-                    <Field label="Nationality" placeholder="Nationality" />
-                    <Field label="Country of Residence" placeholder="Country" />
-                    <Field label="City" placeholder="City" />
-                    <Field label="LinkedIn / Portfolio" placeholder="Optional link" />
+                    <Field name="full_name" label="Full Name" placeholder="Full name" />
+                    <Field name="email" label="Email Address" placeholder="Email" />
+                    <Field name="phone" label="Phone Number" placeholder="Phone" />
+                    <Field name="whatsapp" label="WhatsApp Number" placeholder="WhatsApp" />
+                    <Field name="nationality" label="Nationality" placeholder="Nationality" />
+                    <Field name="country_of_residence" label="Country of Residence" placeholder="Country" />
+                    <Field name="city" label="City" placeholder="City" />
+                    <Field name="linkedin_portfolio" label="LinkedIn / Portfolio" placeholder="Optional link" />
                   </div>
                 </div>
               )}
@@ -492,12 +523,12 @@ function ApplicationModal({
                       <div key={index} className="bg-[#F7F4EE] border border-[#E5DED3] rounded-[28px] p-6">
                         <h4 className="text-xl font-bold mb-6">Education {index + 1}</h4>
                         <div className="grid md:grid-cols-2 gap-6">
-                          <Field label="University / Institution" placeholder="University name" />
-                          <Field label="Degree" placeholder="Degree title" />
-                          <Field label="Field of Study" placeholder="Field" />
-                          <Field label="Country" placeholder="Country" />
-                          <Field label="Start Date" placeholder="Month / Year" />
-                          <Field label="End Date" placeholder="Month / Year or Present" />
+                          <Field name={`education_${index + 1}_institution`} label="University / Institution" placeholder="University name" />
+                          <Field name={`education_${index + 1}_degree`} label="Degree" placeholder="Degree title" />
+                          <Field name={`education_${index + 1}_field`} label="Field of Study" placeholder="Field" />
+                          <Field name={`education_${index + 1}_country`} label="Country" placeholder="Country" />
+                          <Field name={`education_${index + 1}_start_date`} label="Start Date" placeholder="Month / Year" />
+                          <Field name={`education_${index + 1}_end_date`} label="End Date" placeholder="Month / Year or Present" />
                         </div>
                       </div>
                     ))}
@@ -521,14 +552,14 @@ function ApplicationModal({
                       <div key={index} className="bg-[#F7F4EE] border border-[#E5DED3] rounded-[28px] p-6">
                         <h4 className="text-xl font-bold mb-6">Experience {index + 1}</h4>
                         <div className="grid md:grid-cols-2 gap-6">
-                          <Field label="Organization" placeholder="Organization name" />
-                          <Field label="Job Title / Role" placeholder="Role title" />
-                          <Field label="Country" placeholder="Country" />
-                          <Field label="Employment Type" placeholder="Full-time, volunteer, internship..." />
-                          <Field label="Start Date" placeholder="Month / Year" />
-                          <Field label="End Date" placeholder="Month / Year or Present" />
-                          <TextArea label="Main Responsibilities" placeholder="Briefly describe your main responsibilities" />
-                          <TextArea label="Key Achievements" placeholder="Briefly describe relevant achievements" />
+                          <Field name={`experience_${index + 1}_organization`} label="Organization" placeholder="Organization name" />
+                          <Field name={`experience_${index + 1}_job_title`} label="Job Title / Role" placeholder="Role title" />
+                          <Field name={`education_${index + 1}_country`} label="Country" placeholder="Country" />
+                          <Field name={`experience_${index + 1}_employment_type`} label="Employment Type" placeholder="Full-time, volunteer, internship..." />
+                          <Field name={`education_${index + 1}_start_date`} label="Start Date" placeholder="Month / Year" />
+                          <Field name={`education_${index + 1}_end_date`} label="End Date" placeholder="Month / Year or Present" />
+                          <TextArea name={`experience_${index + 1}_responsibilities`} label="Main Responsibilities" placeholder="Briefly describe your main responsibilities" />
+                          <TextArea name={`experience_${index + 1}_achievements`} label="Key Achievements" placeholder="Briefly describe relevant achievements" />
                         </div>
                       </div>
                     ))}
@@ -547,9 +578,9 @@ function ApplicationModal({
               {step === 4 && (
                 <div>
                   <h3 className="text-3xl font-bold mb-8">Letter of Motivation</h3>
-                  <TextArea label="Why are you interested in this role?" placeholder="Tell us why you would like to volunteer with Azah and how your skills can support this role." />
-                  <TextArea label="Relevant Skills" placeholder="List your strongest skills for this position." />
-                  <TextArea label="Availability" placeholder="Tell us your weekly availability and preferred working hours." />
+                  <TextArea name="motivation" label="Why are you interested in this role?" placeholder="Tell us why you would like to volunteer with Azah and how your skills can support this role." />
+                  <TextArea name="relevant_skills" label="Relevant Skills" placeholder="List your strongest skills for this position." />
+                  <TextArea name="availability" label="Availability" placeholder="Tell us your weekly availability and preferred working hours." />
                 </div>
               )}
 
@@ -557,12 +588,12 @@ function ApplicationModal({
                 <div>
                   <h3 className="text-3xl font-bold mb-8">Reference Contact</h3>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <Field label="Reference Full Name" placeholder="Name" />
-                    <Field label="Reference Title" placeholder="Job title" />
-                    <Field label="Reference Email" placeholder="Email" />
-                    <Field label="Reference Phone Number" placeholder="Phone" />
-                    <Field label="Organization" placeholder="Organization" />
-                    <Field label="Relationship to Applicant" placeholder="Supervisor, professor, colleague..." />
+                    <Field name="reference_full_name" label="Reference Full Name" placeholder="Name" />
+                    <Field name="reference_title" label="Reference Title" placeholder="Job title" />
+                    <Field name="reference_email" label="Reference Email" placeholder="Email" />
+                    <Field name="reference_phone" label="Reference Phone Number" placeholder="Phone" />
+                    <Field name="reference_organization" label="Organization" placeholder="Organization" />
+                    <Field name="reference_relationship" label="Relationship to Applicant" placeholder="Supervisor, professor, colleague..." />
                   </div>
 
                   <div className="mt-10 bg-[#F7F4EE] border border-[#E5DED3] rounded-[24px] p-6 text-[#4A5565] leading-8">
@@ -581,11 +612,23 @@ function ApplicationModal({
                     Save & Next
                   </button>
                 ) : (
-                  <button type="button" className="px-8 py-4 rounded-full bg-[#556F2B] text-white hover:opacity-90 transition">
-                    Submit Application
+                  <button type="submit" disabled={isSubmitting} className="px-8 py-4 rounded-full bg-[#556F2B] text-white hover:opacity-90 transition disabled:opacity-50">
+                    {isSubmitting ? "Submitting..." : "Submit Application"}
                   </button>
                 )}
               </div>
+
+              {submitStatus === "success" && (
+                <p className="mt-6 text-[#556F2B] font-semibold">
+                  Application submitted successfully. Thank you for applying to Azah Charitable Foundation.
+                </p>
+              )}
+
+              {submitStatus === "error" && (
+                <p className="mt-6 text-red-700 font-semibold">
+                  We could not submit your application. Please try again.
+                </p>
+              )}
             </form>
           </div>
         </div>
@@ -594,20 +637,20 @@ function ApplicationModal({
   );
 }
 
-function Field({ label, placeholder }: { label: string; placeholder: string }) {
+function Field({ name, label, placeholder }: { name: string; label: string; placeholder: string }) {
   return (
     <div>
       <label className="block text-sm font-semibold mb-3">{label}</label>
-      <input type="text" placeholder={placeholder} className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition" />
+      <input name={name} type="text" placeholder={placeholder} className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition" />
     </div>
   );
 }
 
-function TextArea({ label, placeholder }: { label: string; placeholder: string }) {
+function TextArea({ name, label, placeholder }: { name: string; label: string; placeholder: string }) {
   return (
     <div className="md:col-span-2 mb-6">
       <label className="block text-sm font-semibold mb-3">{label}</label>
-      <textarea rows={5} placeholder={placeholder} className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition resize-none" />
+      <textarea name={name} rows={5} placeholder={placeholder} className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition resize-none" />
     </div>
   );
 }

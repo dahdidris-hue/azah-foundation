@@ -104,13 +104,14 @@ export default function AboutPage() {
           alt="Sudan humanitarian response"
           fill
           priority
-          className="object-cover object-top"
+          className="object-cover object-[center_38%]"
         />
 
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex items-end pb-16">
-          <div className="max-w-5xl">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex items-center md:justify-end">
+          <div className="max-w-3xl">
+
             <h1 className="text-4xl md:text-6xl leading-tight font-extrabold tracking-[-0.04em] text-white mb-8">
               <span className="bg-[#1E6C9F] px-2 box-decoration-clone">
                 Responding to Sudan’s humanitarian crisis
@@ -135,6 +136,7 @@ export default function AboutPage() {
                 DONATE
               </a>
             </div>
+
           </div>
         </div>
       </section>
@@ -142,6 +144,7 @@ export default function AboutPage() {
       {/* STATS */}
       <section className="max-w-7xl mx-auto px-8 py-24">
         <div className="grid md:grid-cols-3 gap-6">
+
           {stats.map((item) => (
             <div
               key={item.title}
@@ -162,12 +165,14 @@ export default function AboutPage() {
               </p>
             </div>
           ))}
+
         </div>
       </section>
 
       {/* SLIDESHOW */}
       <section className="max-w-7xl mx-auto px-8 pb-28">
         <div className="relative overflow-hidden rounded-[40px] bg-white shadow-xl border border-[#E5DED3]">
+
           <div className="grid lg:grid-cols-2 items-center">
 
             <div className="relative h-[500px]">
@@ -180,6 +185,7 @@ export default function AboutPage() {
             </div>
 
             <div className="p-12 md:p-16">
+
               <p className="uppercase tracking-[0.35em] text-sm text-[#556F2B] mb-8">
                 Humanitarian Sectors
               </p>
@@ -196,6 +202,7 @@ export default function AboutPage() {
                 <button
                   onClick={prevSlide}
                   className="w-14 h-14 rounded-full bg-[#F1ECE2] hover:bg-[#556F2B] hover:text-white transition-all text-2xl"
+                  aria-label="Previous sector"
                 >
                   ←
                 </button>
@@ -203,6 +210,7 @@ export default function AboutPage() {
                 <button
                   onClick={nextSlide}
                   className="w-14 h-14 rounded-full bg-[#1E2A44] text-white hover:opacity-90 transition-all text-2xl"
+                  aria-label="Next sector"
                 >
                   →
                 </button>
@@ -213,6 +221,7 @@ export default function AboutPage() {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
+                    aria-label={`Go to sector ${index + 1}`}
                     className={`h-2 rounded-full transition-all ${
                       currentSlide === index
                         ? "bg-[#556F2B] w-10"
@@ -221,9 +230,10 @@ export default function AboutPage() {
                   />
                 ))}
               </div>
-            </div>
 
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -263,6 +273,7 @@ export default function AboutPage() {
         </h2>
 
         <div className="divide-y divide-[#DDD4C6] border-y border-[#DDD4C6]">
+
           {approach.map((item, index) => (
             <div
               key={item.title}
@@ -281,12 +292,13 @@ export default function AboutPage() {
               </p>
             </div>
           ))}
-        </div>
 
+        </div>
       </section>
 
       {/* INTEGRATED APPROACH */}
       <section className="max-w-7xl mx-auto px-8 pb-32">
+
         <div className="bg-[#1E2A44] text-white rounded-[42px] p-12 md:p-20">
 
           <p className="uppercase tracking-[0.35em] text-sm text-[#D4BE8A] mb-8">

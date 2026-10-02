@@ -1,4 +1,12 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+
 export default function ContactPage() {
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+
   const contacts = [
     {
       number: "01",
@@ -26,9 +34,35 @@ export default function ContactPage() {
     },
   ];
 
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("sending");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mjykqzqz", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[#F7F4EE] text-[#1E2A44]">
-
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-8 pt-24 pb-20">
         <p className="uppercase tracking-[0.35em] text-sm text-[#556F2B] mb-6">
@@ -48,14 +82,11 @@ export default function ContactPage() {
       {/* CONTACT SECTIONS */}
       <section className="max-w-7xl mx-auto px-8 pb-24">
         <div className="grid md:grid-cols-2 gap-8">
-
           {contacts.map((item) => (
-
             <div
               key={item.number}
               className="bg-white rounded-[36px] border border-[#E5DED3] p-10 shadow-sm hover:shadow-lg transition-all duration-300"
             >
-
               <div className="flex items-center gap-6 mb-10">
                 <span className="text-[#9E3B3B] text-4xl font-bold tracking-[-0.04em]">
                   {item.number}
@@ -78,18 +109,14 @@ export default function ContactPage() {
               >
                 {item.email}
               </a>
-
             </div>
-
           ))}
-
         </div>
       </section>
 
       {/* MESSAGE FORM */}
       <section className="max-w-7xl mx-auto px-8 pb-32">
         <div className="bg-white rounded-[40px] border border-[#E5DED3] p-12 md:p-16">
-
           <p className="uppercase tracking-[0.35em] text-sm text-[#556F2B] mb-6">
             Write A Message
           </p>
@@ -98,7 +125,11 @@ export default function ContactPage() {
             We welcome partnerships, collaboration, and humanitarian engagement.
           </h2>
 
-          <form className="grid md:grid-cols-2 gap-8">
+          <form
+            onSubmit={handleSubmit}
+            className="grid md:grid-cols-2 gap-8"
+          >
+            <input type="hidden" name="language" value="English" />
 
             <div>
               <label className="block text-sm font-semibold mb-4">
@@ -107,6 +138,8 @@ export default function ContactPage() {
 
               <input
                 type="text"
+                name="full_name"
+                required
                 placeholder="Your name"
                 className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-6 py-5 outline-none focus:border-[#556F2B] transition"
               />
@@ -119,6 +152,8 @@ export default function ContactPage() {
 
               <input
                 type="email"
+                name="email"
+                required
                 placeholder="Your email"
                 className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-6 py-5 outline-none focus:border-[#556F2B] transition"
               />
@@ -131,6 +166,8 @@ export default function ContactPage() {
 
               <input
                 type="text"
+                name="subject"
+                required
                 placeholder="Message subject"
                 className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-6 py-5 outline-none focus:border-[#556F2B] transition"
               />
@@ -143,6 +180,8 @@ export default function ContactPage() {
 
               <textarea
                 rows={7}
+                name="message"
+                required
                 placeholder="Write your message..."
                 className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-6 py-5 outline-none focus:border-[#556F2B] transition resize-none"
               />
@@ -151,16 +190,27 @@ export default function ContactPage() {
             <div className="md:col-span-2 pt-2">
               <button
                 type="submit"
-                className="bg-[#1E2A44] text-white px-10 py-5 rounded-full font-semibold hover:bg-[#556F2B] transition"
+                disabled={status === "sending"}
+                className="bg-[#1E2A44] text-white px-10 py-5 rounded-full font-semibold hover:bg-[#556F2B] transition disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {status === "sending" ? "Sending..." : "Send Message"}
               </button>
-            </div>
 
+              {status === "success" && (
+                <p className="mt-6 text-[#556F2B] font-semibold">
+                  Thank you. Your message has been sent successfully.
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="mt-6 text-[#9E3B3B] font-semibold">
+                  Something went wrong. Please try again or contact us by email.
+                </p>
+              )}
+            </div>
           </form>
         </div>
       </section>
-
     </main>
   );
 }

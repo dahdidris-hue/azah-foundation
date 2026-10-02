@@ -12,7 +12,7 @@ export default function HomeAR() {
     },
     {
       title: "الأمن الغذائي والتغذية",
-      text: "المساعدات الغذائية الطارئة، وتعزيز القدرة على الصمود في مجال التغذية، والتدخلات الإنسانية.",
+      text: "المساعدات الغذائية الطارئة، وتعزيز القدرة على الصمود الغذائي والتغذوي، والتدخلات الإنسانية.",
       image: "/sector-images/food-security.jpg",
     },
     {
@@ -22,7 +22,7 @@ export default function HomeAR() {
     },
     {
       title: "المأوى والإقامة",
-      text: "دعم النازحين من خلال توفير المأوى والإقامة التي تراعي احتياجات الحماية.",
+      text: "دعم النازحين من خلال توفير حلول الإيواء التي تراعي متطلبات الحماية.",
       image: "/sector-images/shelter.jpg",
     },
     {
@@ -61,8 +61,8 @@ export default function HomeAR() {
               ],
               [
                 "12.7 مليون",
-                "امرأة وفتاة معرضات للخطر",
-                "لا تزال ملايين النساء والفتيات معرضات للعنف القائم على النوع الاجتماعي ومخاطر الحماية.",
+                "امرأة وفتاة معرّضات للخطر",
+                "لا تزال ملايين النساء والفتيات معرّضات للعنف القائم على النوع الاجتماعي ومخاطر الحماية.",
               ],
               [
                 "+21 مليون",
@@ -143,7 +143,7 @@ export default function HomeAR() {
           </p>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] leading-[1.15] lg:leading-[1.1] font-bold tracking-[-0.03em] mb-7 md:mb-10">
-            استعادة الكرامة والحماية وتعزيز القدرة على الصمود في السودان.
+            استعادة الكرامة، وتعزيز الحماية والقدرة على الصمود في السودان.
           </h2>
 
           <p className="text-lg md:text-xl leading-8 md:leading-9 text-[#4A5565] max-w-2xl mb-8 md:mb-12">
@@ -173,7 +173,7 @@ export default function HomeAR() {
         <div className="bg-white border border-[#E7E2D8] rounded-[28px] md:rounded-[42px] p-6 sm:p-8 md:p-14 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-7 md:mb-10">
             <p className="tracking-[0.05em] text-xs sm:text-sm text-[#7B826A]">
-              البرنامج المميز
+              برنامجنا الرئيسي
             </p>
 
             <p className="text-[#B89B5E] font-semibold">IRPP</p>

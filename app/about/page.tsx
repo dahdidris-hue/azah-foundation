@@ -96,6 +96,7 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-[#F7F4EE] text-[#1E2A44]">
+
       {/* HERO IMAGE */}
       <section className="relative w-full h-[540px] overflow-hidden bg-[#1E2A44]">
         <Image
@@ -103,7 +104,7 @@ export default function AboutPage() {
           alt="Sudan humanitarian response"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-top"
         />
 
         <div className="absolute inset-0 bg-black/25" />
@@ -156,7 +157,9 @@ export default function AboutPage() {
                 {item.title}
               </h3>
 
-              <p className="text-[#4A5565] leading-8">{item.text}</p>
+              <p className="text-[#4A5565] leading-8">
+                {item.text}
+              </p>
             </div>
           ))}
         </div>
@@ -166,6 +169,7 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-8 pb-28">
         <div className="relative overflow-hidden rounded-[40px] bg-white shadow-xl border border-[#E5DED3]">
           <div className="grid lg:grid-cols-2 items-center">
+
             <div className="relative h-[500px]">
               <Image
                 src={sectors[currentSlide].image}
@@ -218,6 +222,7 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -225,6 +230,7 @@ export default function AboutPage() {
       {/* FOUNDATION */}
       <section className="max-w-7xl mx-auto px-8 pb-28">
         <div className="bg-[#1E2A44] text-white rounded-[42px] p-12 md:p-20">
+
           <p className="uppercase tracking-[0.35em] text-sm text-[#D4BE8A] mb-8">
             Our Foundation
           </p>
@@ -241,11 +247,13 @@ export default function AboutPage() {
             Our work is grounded in dignity, safety, community participation,
             and sustainable resilience.
           </p>
+
         </div>
       </section>
 
       {/* APPROACH */}
       <section className="max-w-7xl mx-auto px-8 pb-20">
+
         <p className="uppercase tracking-[0.35em] text-sm text-[#556F2B] mb-8">
           Our Approach
         </p>
@@ -274,11 +282,13 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+
       </section>
 
       {/* INTEGRATED APPROACH */}
       <section className="max-w-7xl mx-auto px-8 pb-32">
         <div className="bg-[#1E2A44] text-white rounded-[42px] p-12 md:p-20">
+
           <p className="uppercase tracking-[0.35em] text-sm text-[#D4BE8A] mb-8">
             Integrated Approach
           </p>
@@ -294,8 +304,10 @@ export default function AboutPage() {
             are designed to address urgent needs while supporting people to
             rebuild their lives with safety, opportunity, and hope.
           </p>
+
         </div>
       </section>
+
     </main>
   );
 }

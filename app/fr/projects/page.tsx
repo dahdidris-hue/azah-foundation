@@ -17,7 +17,7 @@ export default function ProjectsPageFR() {
     },
     {
       title: "Hôpital pédiatrique d’oncologie",
-      status: "Phase de planification",
+      status: "Actif",
       tag: "Projet de santé",
       description:
         "Un projet de santé spécialisé visant à améliorer l’accès au diagnostic, au traitement, aux soins et au soutien psychosocial pour les enfants atteints de cancer au Soudan.",

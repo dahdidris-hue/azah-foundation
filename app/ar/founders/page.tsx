@@ -21,12 +21,12 @@ export default function FoundersPageAR() {
       </section>
 
       {/* Azah */}
-      <section className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-16 md:py-24">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-16 lg:gap-20 items-start">
-          
+      <section className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-14 md:py-24">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 md:gap-16 lg:gap-20 items-start">
+
           {/* Photo */}
           <div>
-            <div className="relative w-full aspect-[4/4.2] md:aspect-[4/5] rounded-[28px] md:rounded-[40px] overflow-hidden bg-[#E7E2D8]">
+            <div className="relative w-full aspect-[4/3.85] md:aspect-[4/5] rounded-[28px] md:rounded-[40px] overflow-hidden bg-[#E7E2D8]">
               <Image
                 src="/azah-founder-photo-2026.png"
                 alt="عزة محيي الدين مبروك"
@@ -40,37 +40,35 @@ export default function FoundersPageAR() {
 
           {/* Profile */}
           <div className="lg:pt-4">
-            <p className="tracking-[0.05em] text-sm text-[#7B826A] font-semibold mb-5">
-              الرئيسة والمؤسِّسة
-            </p>
 
-            <h2 className="text-[2.65rem] sm:text-5xl md:text-5xl font-bold tracking-[-0.03em] leading-tight">
+            {/* Name */}
+            <h2 className="text-[2.9rem] sm:text-5xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.15]">
               عزة محيي الدين مبروك
             </h2>
 
-            <div className="mt-8 border-t border-[#D9D3C8] pt-6 space-y-3">
-              <div>
-                <p className="text-lg font-semibold">
-                  رئيسة مؤسسة عزة الخيرية
-                </p>
-              </div>
+            {/* Main NGO Title */}
+            <p className="mt-5 text-xl md:text-2xl font-bold text-[#1E2A44]">
+              رئيسة مؤسسة عزة الخيرية
+            </p>
 
-              <div>
-                <p className="text-lg font-semibold">
-                  المؤسِّسة
-                </p>
-              </div>
+            {/* Other Titles */}
+            <div className="mt-6 border-t border-[#D9D3C8] pt-6 space-y-3">
+              <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
+                الرئيسة والمؤسِّسة
+              </p>
 
-              <div>
-                <p className="text-lg font-semibold">
-                  حرم رئيس وزراء السودان
-                </p>
-              </div>
+              <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
+                المؤسِّسة
+              </p>
+
+              <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
+                حرم رئيس وزراء السودان
+              </p>
             </div>
 
             {/* Message */}
             <div className="mt-10 bg-white border border-[#E5DED3] rounded-[28px] md:rounded-[36px] p-7 md:p-10 shadow-sm">
-              <p className="tracking-[0.05em] text-xs text-[#B89B5E] font-semibold mb-6">
+              <p className="tracking-[0.05em] text-sm text-[#B89B5E] font-semibold mb-6">
                 رسالة من المؤسِّسة
               </p>
 
@@ -95,36 +93,36 @@ export default function FoundersPageAR() {
       </div>
 
       {/* Dahd */}
-      <section className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-16 md:py-24">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 md:gap-16 lg:gap-20 items-start">
-          
+      <section className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-14 md:py-24">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-16 lg:gap-20 items-start">
+
           {/* Profile */}
           <div className="order-2 lg:order-1 lg:pt-4">
-            <p className="tracking-[0.05em] text-sm text-[#7B826A] font-semibold mb-5">
-              الرئيس التنفيذي للعمليات والمؤسِّسة المشاركة
-            </p>
 
-            <h2 className="text-[2.65rem] sm:text-5xl md:text-5xl font-bold tracking-[-0.03em] leading-tight">
+            {/* Name */}
+            <h2 className="text-[2.9rem] sm:text-5xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.15]">
               دعد كامل إدريس
             </h2>
 
-            <div className="mt-8 border-t border-[#D9D3C8] pt-6 space-y-3">
-              <div>
-                <p className="text-lg font-semibold">
-                  الرئيس التنفيذي للعمليات
-                </p>
-              </div>
+            {/* Main NGO Title */}
+            <p className="mt-5 text-xl md:text-2xl font-bold text-[#1E2A44]">
+              الرئيس التنفيذي للعمليات
+            </p>
 
-              <div>
-                <p className="text-lg font-semibold">
-                  المؤسِّسة المشاركة
-                </p>
-              </div>
+            {/* Other Titles */}
+            <div className="mt-6 border-t border-[#D9D3C8] pt-6 space-y-3">
+              <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
+                الرئيس التنفيذي للعمليات والمؤسِّسة المشاركة
+              </p>
+
+              <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
+                المؤسِّسة المشاركة
+              </p>
             </div>
 
             {/* Message */}
             <div className="mt-10 bg-white border border-[#E5DED3] rounded-[28px] md:rounded-[36px] p-7 md:p-10 shadow-sm">
-              <p className="tracking-[0.05em] text-xs text-[#B89B5E] font-semibold mb-6">
+              <p className="tracking-[0.05em] text-sm text-[#B89B5E] font-semibold mb-6">
                 رسالة من المؤسِّسة المشاركة
               </p>
 
@@ -157,7 +155,7 @@ export default function FoundersPageAR() {
 
           {/* Photo */}
           <div className="order-1 lg:order-2">
-            <div className="relative w-full aspect-[4/4.2] md:aspect-[4/5] rounded-[28px] md:rounded-[40px] overflow-hidden bg-[#E7E2D8]">
+            <div className="relative w-full aspect-[4/3.85] md:aspect-[4/5] rounded-[28px] md:rounded-[40px] overflow-hidden bg-[#E7E2D8]">
               <Image
                 src="/dahd-founder-photo.jpg"
                 alt="دعد كامل إدريس"

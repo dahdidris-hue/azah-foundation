@@ -28,7 +28,7 @@ export default function FoundersPage() {
           <div>
             <div className="relative w-full aspect-[4/5] rounded-[28px] md:rounded-[40px] overflow-hidden bg-[#E7E2D8]">
               <Image
-                src="/azah-founder-photo.png"
+                src="/azah-founder-photo-2026.png"
                 alt="Azah Mohielden Mabrouk"
                 fill
                 className="object-cover"

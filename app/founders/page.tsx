@@ -56,56 +56,26 @@ export default function FoundersPage() {
               عزة محيي الدين مبروك
             </p>
 
-            {/* Main NGO Title */}
+            {/* Role and Foundation */}
             <p className="mt-5 text-xl md:text-2xl font-bold text-[#1E2A44]">
-              President, Azah Charitable Foundation
+              President &amp; Founder
             </p>
-
-            <p
-              dir="rtl"
-              className="text-[#6B7280] text-base md:text-lg mt-1 text-left"
-            >
-              رئيسة مؤسسة عزة الخيرية
+            <p dir="rtl" className="text-[#6B7280] text-base md:text-lg mt-1 text-left">
+              الرئيسة والمؤسِّسة
             </p>
-
-            {/* Titles */}
-            <div className="mt-5 md:mt-8 border-t border-[#D9D3C8] pt-5 md:pt-6 space-y-4">
-
-              <div>
-                <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
-                  President & Founder
-                </p>
-                <p
-                  dir="rtl"
-                  className="text-[#6B7280] text-sm md:text-base mt-1 text-left"
-                >
-                  الرئيسة والمؤسِّسة
-                </p>
-              </div>
-
-              <div>
-                <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
-                  Founder
-                </p>
-                <p
-                  dir="rtl"
-                  className="text-[#6B7280] text-sm md:text-base mt-1 text-left"
-                >
-                  المؤسِّسة
-                </p>
-              </div>
-
-              <div>
-                <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
-                  Wife of the Prime Minister of Sudan
-                </p>
-                <p
-                  dir="rtl"
-                  className="text-[#6B7280] text-sm md:text-base mt-1 text-left"
-                >
-                  حرم رئيس وزراء السودان
-                </p>
-              </div>
+            <p className="mt-3 text-lg md:text-xl text-[#4A5565]">
+              Azah Charitable Foundation
+            </p>
+            <p dir="rtl" className="text-[#6B7280] text-base md:text-lg mt-1 text-left">
+              مؤسسة عزة الخيرية
+            </p>
+            <div className="mt-5 md:mt-8 border-t border-[#D9D3C8] pt-5 md:pt-6">
+              <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
+                Wife of the Prime Minister of Sudan
+              </p>
+              <p dir="rtl" className="text-[#6B7280] text-sm md:text-base mt-1 text-left">
+                حرم رئيس وزراء السودان
+              </p>
             </div>
 
             {/* Message */}
@@ -157,45 +127,19 @@ export default function FoundersPage() {
               دعد كامل إدريس
             </p>
 
-            {/* Main NGO Title */}
+            {/* Role and Foundation */}
             <p className="mt-5 text-xl md:text-2xl font-bold text-[#1E2A44]">
-              Chief Operating Officer
+              Chief Operating Officer &amp; Co-Founder
             </p>
-
-            <p
-              dir="rtl"
-              className="text-[#6B7280] text-base md:text-lg mt-1 text-left"
-            >
-              الرئيس التنفيذي للعمليات
+            <p dir="rtl" className="text-[#6B7280] text-base md:text-lg mt-1 text-left">
+              الرئيس التنفيذي للعمليات والمؤسِّسة المشاركة
             </p>
-
-            {/* Titles */}
-            <div className="mt-5 md:mt-8 border-t border-[#D9D3C8] pt-5 md:pt-6 space-y-4">
-
-              <div>
-                <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
-                  Chief Operating Officer & Co-Founder
-                </p>
-                <p
-                  dir="rtl"
-                  className="text-[#6B7280] text-sm md:text-base mt-1 text-left"
-                >
-                  الرئيس التنفيذي للعمليات والمؤسِّسة المشاركة
-                </p>
-              </div>
-
-              <div>
-                <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
-                  Co-Founder
-                </p>
-                <p
-                  dir="rtl"
-                  className="text-[#6B7280] text-sm md:text-base mt-1 text-left"
-                >
-                  المؤسِّسة المشاركة
-                </p>
-              </div>
-            </div>
+            <p className="mt-3 text-lg md:text-xl text-[#4A5565]">
+              Azah Charitable Foundation
+            </p>
+            <p dir="rtl" className="text-[#6B7280] text-base md:text-lg mt-1 text-left">
+              مؤسسة عزة الخيرية
+            </p>
 
             {/* Message */}
             <div className="mt-7 md:mt-10 bg-white border border-[#E5DED3] rounded-[28px] md:rounded-[36px] p-7 md:p-10 shadow-sm">

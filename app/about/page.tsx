@@ -97,33 +97,30 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#F7F4EE] text-[#1E2A44]">
 
-      {/* HERO IMAGE */}
+      {/* HERO */}
       <section className="relative w-full h-[540px] overflow-hidden bg-[#1E2A44]">
         <Image
-          src="/sudan-hero.jpg"
+          src="/sudan-ero.png"
           alt="Sudan humanitarian response"
           fill
           priority
-          className="object-cover object-[center_38%]"
+          className="object-cover object-center"
         />
 
         <div className="absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex items-center md:justify-end">
-          <div className="max-w-3xl">
-
+        <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex items-end pb-16">
+          <div className="max-w-5xl">
             <h1 className="text-4xl md:text-6xl leading-tight font-extrabold tracking-[-0.04em] text-white mb-8">
               <span className="bg-[#1E6C9F] px-2 box-decoration-clone">
                 Responding to Sudan’s humanitarian crisis
               </span>{" "}
-              <span>
-                with dignity, protection, and hope.
-              </span>
+              <span>with dignity, protection, and hope.</span>
             </h1>
 
             <div className="flex items-center gap-4">
               <a
-                href="/about"
+                href="/projects"
                 className="border-2 border-white text-white px-6 py-3 rounded-md text-sm font-bold hover:bg-white hover:text-[#1E2A44] transition"
               >
                 READ MORE
@@ -136,7 +133,6 @@ export default function AboutPage() {
                 DONATE
               </a>
             </div>
-
           </div>
         </div>
       </section>
@@ -144,7 +140,6 @@ export default function AboutPage() {
       {/* STATS */}
       <section className="max-w-7xl mx-auto px-8 py-24">
         <div className="grid md:grid-cols-3 gap-6">
-
           {stats.map((item) => (
             <div
               key={item.title}
@@ -165,14 +160,12 @@ export default function AboutPage() {
               </p>
             </div>
           ))}
-
         </div>
       </section>
 
       {/* SLIDESHOW */}
       <section className="max-w-7xl mx-auto px-8 pb-28">
         <div className="relative overflow-hidden rounded-[40px] bg-white shadow-xl border border-[#E5DED3]">
-
           <div className="grid lg:grid-cols-2 items-center">
 
             <div className="relative h-[500px]">
@@ -185,7 +178,6 @@ export default function AboutPage() {
             </div>
 
             <div className="p-12 md:p-16">
-
               <p className="uppercase tracking-[0.35em] text-sm text-[#556F2B] mb-8">
                 Humanitarian Sectors
               </p>
@@ -230,10 +222,9 @@ export default function AboutPage() {
                   />
                 ))}
               </div>
-
             </div>
-          </div>
 
+          </div>
         </div>
       </section>
 
@@ -273,7 +264,6 @@ export default function AboutPage() {
         </h2>
 
         <div className="divide-y divide-[#DDD4C6] border-y border-[#DDD4C6]">
-
           {approach.map((item, index) => (
             <div
               key={item.title}
@@ -292,13 +282,12 @@ export default function AboutPage() {
               </p>
             </div>
           ))}
-
         </div>
+
       </section>
 
       {/* INTEGRATED APPROACH */}
       <section className="max-w-7xl mx-auto px-8 pb-32">
-
         <div className="bg-[#1E2A44] text-white rounded-[42px] p-12 md:p-20">
 
           <p className="uppercase tracking-[0.35em] text-sm text-[#D4BE8A] mb-8">

@@ -99,20 +99,22 @@ export default function AboutPageAR() {
       dir="rtl"
       className="min-h-screen bg-[#F7F4EE] text-[#1E2A44]"
     >
-      {/* HERO IMAGE */}
+
+      {/* HERO */}
       <section className="relative w-full h-[540px] overflow-hidden bg-[#1E2A44]">
         <Image
-          src="/sudan-hero.jpg"
+          src="/sudan-ero.png"
           alt="الاستجابة الإنسانية في السودان"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
         />
 
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex items-end pb-16">
           <div className="max-w-5xl">
+
             <h1 className="text-4xl md:text-6xl leading-tight font-extrabold tracking-[-0.04em] text-white mb-8">
               <span className="bg-[#1E6C9F] px-2 box-decoration-clone">
                 نستجيب للأزمة الإنسانية في السودان
@@ -122,7 +124,7 @@ export default function AboutPageAR() {
 
             <div className="flex items-center gap-4">
               <a
-                href="/ar/about"
+                href="/ar/projects"
                 className="border-2 border-white text-white px-6 py-3 rounded-md text-sm font-bold hover:bg-white hover:text-[#1E2A44] transition"
               >
                 اقرأ المزيد
@@ -135,6 +137,7 @@ export default function AboutPageAR() {
                 تبرع
               </a>
             </div>
+
           </div>
         </div>
       </section>
@@ -142,6 +145,7 @@ export default function AboutPageAR() {
       {/* STATS */}
       <section className="max-w-7xl mx-auto px-8 py-24">
         <div className="grid md:grid-cols-3 gap-6">
+
           {stats.map((item) => (
             <div
               key={item.title}
@@ -165,13 +169,16 @@ export default function AboutPageAR() {
               </p>
             </div>
           ))}
+
         </div>
       </section>
 
       {/* SLIDESHOW */}
       <section className="max-w-7xl mx-auto px-8 pb-28">
         <div className="relative overflow-hidden rounded-[40px] bg-white shadow-xl border border-[#E5DED3]">
+
           <div className="grid lg:grid-cols-2 items-center">
+
             <div className="relative h-[500px]">
               <Image
                 src={sectors[currentSlide].image}
@@ -182,6 +189,7 @@ export default function AboutPageAR() {
             </div>
 
             <div className="p-12 md:p-16">
+
               <p className="tracking-[0.2em] text-sm text-[#556F2B] mb-8">
                 القطاعات الإنسانية
               </p>
@@ -226,6 +234,7 @@ export default function AboutPageAR() {
                   />
                 ))}
               </div>
+
             </div>
           </div>
         </div>
@@ -234,6 +243,7 @@ export default function AboutPageAR() {
       {/* FOUNDATION */}
       <section className="max-w-7xl mx-auto px-8 pb-28">
         <div className="bg-[#1E2A44] text-white rounded-[42px] p-12 md:p-20">
+
           <p className="tracking-[0.15em] text-sm text-[#D4BE8A] mb-8">
             مؤسستنا
           </p>
@@ -248,11 +258,13 @@ export default function AboutPageAR() {
             ومبادرات التعافي طويل الأمد. ويستند عملنا إلى الكرامة والأمان،
             والمشاركة المجتمعية، وتعزيز القدرة على الصمود بصورة مستدامة.
           </p>
+
         </div>
       </section>
 
       {/* APPROACH */}
       <section className="max-w-7xl mx-auto px-8 pb-20">
+
         <p className="tracking-[0.15em] text-sm text-[#556F2B] mb-8">
           نهجنا
         </p>
@@ -262,6 +274,7 @@ export default function AboutPageAR() {
         </h2>
 
         <div className="divide-y divide-[#DDD4C6] border-y border-[#DDD4C6]">
+
           {approach.map((item, index) => (
             <div
               key={item.title}
@@ -280,12 +293,15 @@ export default function AboutPageAR() {
               </p>
             </div>
           ))}
+
         </div>
       </section>
 
       {/* INTEGRATED APPROACH */}
       <section className="max-w-7xl mx-auto px-8 pb-32">
+
         <div className="bg-[#1E2A44] text-white rounded-[42px] p-12 md:p-20">
+
           <p className="tracking-[0.15em] text-sm text-[#D4BE8A] mb-8">
             نهج متكامل
           </p>
@@ -301,8 +317,10 @@ export default function AboutPageAR() {
             والمجتمعات في إعادة بناء حياتهم ضمن بيئة توفر لهم الأمان والفرص
             والأمل.
           </p>
+
         </div>
       </section>
+
     </main>
   );
 }

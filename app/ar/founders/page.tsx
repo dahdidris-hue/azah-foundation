@@ -3,18 +3,15 @@ import Image from "next/image";
 export default function FoundersPageAR() {
   return (
     <main dir="rtl" className="bg-[#F7F4EE] text-[#1E2A44]">
-
       {/* Page Introduction */}
       <section className="border-b border-[#E7E2D8]">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-10 pb-9 md:py-24">
           <p className="tracking-[0.05em] text-xs sm:text-sm text-[#556F2B] font-semibold mb-5">
             المؤسِّسات والقيادة
           </p>
-
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-[-0.03em] leading-[1.15] max-w-4xl">
             من يقف وراء مؤسسة عزة.
           </h1>
-
           <p className="text-lg md:text-xl leading-8 md:leading-9 text-[#4A5565] max-w-3xl mt-6 md:mt-8">
             التزام مشترك بالخدمة والمساءلة وإعادة بناء حياة كريمة.
           </p>
@@ -24,7 +21,6 @@ export default function FoundersPageAR() {
       {/* Azah */}
       <section className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-5 pb-10 md:py-24">
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-6 md:gap-16 lg:gap-20 items-start">
-
           {/* Photo */}
           <div>
             <div className="relative w-full aspect-[4/3.85] md:aspect-[4/5] rounded-[28px] md:rounded-[40px] overflow-hidden bg-[#E7E2D8]">
@@ -41,27 +37,18 @@ export default function FoundersPageAR() {
 
           {/* Profile */}
           <div>
-
-            {/* Name First */}
             <h2 className="text-[2.9rem] sm:text-5xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.15]">
               عزة محيي الدين مبروك
             </h2>
 
-            {/* NGO Title */}
+            {/* Role and Foundation */}
             <p className="mt-4 text-xl md:text-2xl font-bold text-[#1E2A44]">
-              رئيسة مؤسسة عزة الخيرية
+              الرئيسة والمؤسِّسة
             </p>
-
-            {/* Titles */}
-            <div className="mt-5 md:mt-8 border-t border-[#D9D3C8] pt-5 md:pt-6 space-y-3">
-              <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
-                الرئيسة والمؤسِّسة
-              </p>
-
-              <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
-                المؤسِّسة
-              </p>
-
+            <p className="mt-3 text-lg md:text-xl text-[#4A5565]">
+              مؤسسة عزة الخيرية
+            </p>
+            <div className="mt-5 md:mt-8 border-t border-[#D9D3C8] pt-5 md:pt-6">
               <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
                 حرم رئيس وزراء السودان
               </p>
@@ -72,12 +59,9 @@ export default function FoundersPageAR() {
               <p className="tracking-[0.05em] text-sm text-[#B89B5E] font-semibold mb-6">
                 رسالة من المؤسِّسة
               </p>
-
               <div className="text-lg leading-9 text-[#4A5565] whitespace-pre-line">
                 {`نحن في مؤسسة عزة الخيرية نؤمن إيمانًا قاطعًا بأن خدمة الإنسان وتلبية جميع احتياجاته مسؤولية أخلاقية وإنسانية، لذلك فإننا نعمل على تسخير قدراتنا لتحقيق هذا الطموح، ونأمل في تحويله إلى عمل يعيد للإنسان في هذا الوطن حياةً كريمةً.`}
               </div>
-
-              {/* Signature */}
               <div className="mt-8 pt-6 border-t border-[#E7E2D8]">
                 <p className="text-lg font-bold text-[#1E2A44]">
                   عزة محيي الدين مبروك
@@ -96,37 +80,25 @@ export default function FoundersPageAR() {
       {/* Dahd */}
       <section className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-5 pb-10 md:py-24">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 md:gap-16 lg:gap-20 items-start">
-
           {/* Profile */}
           <div className="order-2 lg:order-1">
-
-            {/* Name First */}
             <h2 className="text-[2.9rem] sm:text-5xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.15]">
               دعد كامل إدريس
             </h2>
 
-            {/* NGO Title */}
+            {/* Role and Foundation */}
             <p className="mt-4 text-xl md:text-2xl font-bold text-[#1E2A44]">
-              الرئيس التنفيذي للعمليات
+              الرئيس التنفيذي للعمليات والمؤسِّسة المشاركة
             </p>
-
-            {/* Titles */}
-            <div className="mt-5 md:mt-8 border-t border-[#D9D3C8] pt-5 md:pt-6 space-y-3">
-              <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
-                الرئيس التنفيذي للعمليات والمؤسِّسة المشاركة
-              </p>
-
-              <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
-                المؤسِّسة المشاركة
-              </p>
-            </div>
+            <p className="mt-3 text-lg md:text-xl text-[#4A5565]">
+              مؤسسة عزة الخيرية
+            </p>
 
             {/* Message */}
             <div className="mt-7 md:mt-10 bg-white border border-[#E5DED3] rounded-[28px] md:rounded-[36px] p-7 md:p-10 shadow-sm">
               <p className="tracking-[0.05em] text-sm text-[#B89B5E] font-semibold mb-6">
                 رسالة من المؤسِّسة المشاركة
               </p>
-
               <div className="text-lg leading-9 text-[#4A5565] whitespace-pre-line">
                 {`مرحبًا بكم في مؤسسة عزة الخيرية!
 
@@ -144,8 +116,6 @@ export default function FoundersPageAR() {
 
 تواصلوا معنا إذا كانت لديكم فكرة، أو مهارة ترغبون في المساهمة بها، أو كنتم جزءًا من منظمة ترغب في الشراكة معنا. تطوعوا، تبرعوا، تحدثوا معنا، ولنقم معًا بعمل من أجل السودان!`}
               </div>
-
-              {/* Signature */}
               <div className="mt-8 pt-6 border-t border-[#E7E2D8]">
                 <p className="text-lg font-bold text-[#1E2A44]">
                   دعد كامل إدريس
@@ -175,13 +145,11 @@ export default function FoundersPageAR() {
           <p className="tracking-[0.05em] text-xs text-[#BFC8A5] mb-5">
             مؤسسة عزة الخيرية
           </p>
-
           <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.03em] leading-tight">
             نستعيد الكرامة. ونعيد بناء الأمل.
           </h2>
         </div>
       </section>
-
     </main>
   );
 }

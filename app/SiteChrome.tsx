@@ -67,7 +67,8 @@ export default function SiteChrome({
       supportText:
         "ساهم في دعم جهود الحماية والرعاية الصحية والمأوى وتعزيز القدرة على الصمود والتعافي والاستجابة الإنسانية في مختلف أنحاء السودان.",
       donateNow: "تبرع الآن",
-      copyright: "© 2026 مؤسسة عزة الخيرية – السودان. جميع الحقوق محفوظة.",
+      copyright:
+        "© 2026 مؤسسة عزة الخيرية – السودان. جميع الحقوق محفوظة.",
       closing: "من أجل أثر إنساني وتعافٍ مستدام.",
     },
 
@@ -101,74 +102,79 @@ export default function SiteChrome({
   const t = text[language];
 
   const homePath = prefix || "/";
-
   const link = (page: string) => `${prefix}/${page}`;
-
   const isArabic = language === "ar";
 
   return (
     <div dir={isArabic ? "rtl" : "ltr"}>
+      {/* HEADER */}
       <header className="bg-white border-b border-[#E5DED3]">
-        <div className="max-w-7xl mx-auto px-5 md:px-8 py-3 md:py-5 flex items-center justify-between gap-4 md:gap-10">
-          <a href={homePath} className="flex items-center gap-4 md:gap-6">
+        <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-8 py-3 md:py-4 flex items-center justify-between gap-4">
+          
+          {/* LOGO */}
+          <a
+            href={homePath}
+            className="flex items-center gap-3 lg:gap-4 shrink-0"
+          >
             <Image
               src="/azah-logo.png"
               alt="Azah Charitable Foundation"
               width={400}
               height={400}
-              className="h-24 sm:h-28 md:h-36 lg:h-44 w-auto object-contain"
+              className="h-24 sm:h-28 md:h-32 lg:h-36 w-auto object-contain"
               priority
             />
 
             <div
-              className={`hidden lg:block ${
+              className={`hidden xl:block ${
                 isArabic
-                  ? "border-r border-[#E5DED3] pr-6"
-                  : "border-l border-[#E5DED3] pl-6"
+                  ? "border-r border-[#E5DED3] pr-4"
+                  : "border-l border-[#E5DED3] pl-4"
               }`}
             >
-              <p className="text-[#1E2A44] text-2xl font-bold tracking-wide">
+              <p className="text-[#1E2A44] text-xl font-bold tracking-wide">
                 AZAH
               </p>
 
-              <p className="text-[#556F2B] text-base font-medium mt-1">
+              <p className="text-[#556F2B] text-xs font-medium mt-1 max-w-[170px] leading-5">
                 {t.slogan}
               </p>
             </div>
           </a>
 
-          <nav className="hidden md:flex items-center gap-6 text-[#1E2A44] text-base font-bold">
+          {/* DESKTOP NAVIGATION */}
+          <nav className="hidden md:flex items-center justify-end gap-4 lg:gap-5 text-[#1E2A44] text-sm lg:text-[15px] font-bold whitespace-nowrap">
             <a
               href={link("about")}
-              className="hover:text-[#556F2B] transition"
+              className="hover:text-[#556F2B] transition whitespace-nowrap"
             >
               {t.about}
             </a>
 
             <a
               href={link("founders")}
-              className="hover:text-[#556F2B] transition"
+              className="hover:text-[#556F2B] transition whitespace-nowrap"
             >
               {t.founders}
             </a>
 
             <a
               href={link("projects")}
-              className="hover:text-[#556F2B] transition"
+              className="hover:text-[#556F2B] transition whitespace-nowrap"
             >
               {t.projects}
             </a>
 
             <a
               href={link("careers")}
-              className="hover:text-[#556F2B] transition"
+              className="hover:text-[#556F2B] transition whitespace-nowrap"
             >
               {t.careers}
             </a>
 
             <a
               href={link("contact")}
-              className="hover:text-[#556F2B] transition"
+              className="hover:text-[#556F2B] transition whitespace-nowrap"
             >
               {t.contact}
             </a>
@@ -177,14 +183,14 @@ export default function SiteChrome({
 
             <a
               href={link("donate")}
-              className="bg-[#1E2A44] text-white px-7 py-4 rounded-full hover:bg-[#556F2B] transition"
+              className="bg-[#1E2A44] text-white px-5 lg:px-6 py-3 rounded-full hover:bg-[#556F2B] transition whitespace-nowrap shrink-0"
             >
               {t.donate}
             </a>
           </nav>
         </div>
 
-        {/* Mobile navigation */}
+        {/* MOBILE NAVIGATION */}
         <div className="md:hidden border-t border-[#E5DED3]">
           <nav className="px-5 py-4 flex items-center gap-5 overflow-x-auto whitespace-nowrap text-sm font-semibold text-[#1E2A44]">
             <a href={link("about")}>{t.about}</a>
@@ -195,7 +201,7 @@ export default function SiteChrome({
 
             <a
               href={link("donate")}
-              className="bg-[#1E2A44] text-white px-4 py-2 rounded-full"
+              className="bg-[#1E2A44] text-white px-4 py-2 rounded-full whitespace-nowrap"
             >
               {t.donate}
             </a>
@@ -207,8 +213,10 @@ export default function SiteChrome({
 
       <main>{children}</main>
 
+      {/* FOOTER */}
       <footer className="bg-[#1E2A44] text-white mt-0">
         <div className="max-w-7xl mx-auto px-5 md:px-8 py-10 md:py-16 grid sm:grid-cols-2 lg:grid-cols-[1.1fr_0.8fr_1.5fr_1.1fr] gap-10 md:gap-14">
+          
           <div>
             <Image
               src="/azah-logo-transparent.png"
@@ -227,12 +235,47 @@ export default function SiteChrome({
             <h3 className="text-lg font-semibold mb-5">{t.quickLinks}</h3>
 
             <div className="flex flex-col gap-3 text-sm text-[#D6D9E0]">
-              <a href={link("about")}>{t.about}</a>
-              <a href={link("founders")}>{t.founders}</a>
-              <a href={link("projects")}>{t.projects}</a>
-              <a href={link("careers")}>{t.careers}</a>
-              <a href={link("contact")}>{t.contact}</a>
-              <a href={link("donate")}>{t.donate}</a>
+              <a
+                href={link("about")}
+                className="hover:text-white transition"
+              >
+                {t.about}
+              </a>
+
+              <a
+                href={link("founders")}
+                className="hover:text-white transition"
+              >
+                {t.founders}
+              </a>
+
+              <a
+                href={link("projects")}
+                className="hover:text-white transition"
+              >
+                {t.projects}
+              </a>
+
+              <a
+                href={link("careers")}
+                className="hover:text-white transition"
+              >
+                {t.careers}
+              </a>
+
+              <a
+                href={link("contact")}
+                className="hover:text-white transition"
+              >
+                {t.contact}
+              </a>
+
+              <a
+                href={link("donate")}
+                className="hover:text-white transition"
+              >
+                {t.donate}
+              </a>
             </div>
           </div>
 
@@ -301,4 +344,3 @@ export default function SiteChrome({
     </div>
   );
 }
-

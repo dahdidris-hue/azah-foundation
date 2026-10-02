@@ -7,8 +7,8 @@ export default function AboutPageFR() {
   const stats = [
     {
       number: "33,7 M",
-      title: "Personnes ayant besoin d’une aide humanitaire",
-      text: "Personnes au Soudan ayant besoin d’une aide humanitaire urgente.",
+      title: "Personnes ayant besoin d’une assistance humanitaire",
+      text: "Personnes au Soudan ayant besoin d’une assistance humanitaire urgente.",
     },
     {
       number: "12 M+",
@@ -17,7 +17,7 @@ export default function AboutPageFR() {
     },
     {
       number: "17,1 M",
-      title: "Femmes et filles exposées à des risques",
+      title: "Femmes et filles exposées à des risques de protection",
       text: "Femmes et filles ayant besoin de protection, de sécurité et de soutien.",
     },
   ];
@@ -232,8 +232,8 @@ export default function AboutPageFR() {
           </p>
 
           <h2 className="text-4xl md:text-6xl leading-tight font-bold tracking-[-0.04em] max-w-5xl mb-8">
-            Fondée sur la protection, la compassion et la conviction que le
-            relèvement doit restaurer la dignité.
+            Une fondation guidée par la protection, la compassion et la
+            conviction que le relèvement doit restaurer la dignité.
           </h2>
 
           <p className="text-lg leading-9 text-[#D9E1EA] max-w-5xl">

@@ -3,9 +3,10 @@ import Image from "next/image";
 export default function FoundersPageAR() {
   return (
     <main dir="rtl" className="bg-[#F7F4EE] text-[#1E2A44]">
+      
       {/* Page Introduction */}
       <section className="border-b border-[#E7E2D8]">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-12 pb-10 md:py-24">
           <p className="tracking-[0.05em] text-xs sm:text-sm text-[#556F2B] font-semibold mb-5">
             المؤسِّسات والقيادة
           </p>
@@ -14,15 +15,15 @@ export default function FoundersPageAR() {
             من يقف وراء مؤسسة عزة.
           </h1>
 
-          <p className="text-lg md:text-xl leading-8 md:leading-9 text-[#4A5565] max-w-3xl mt-8">
+          <p className="text-lg md:text-xl leading-8 md:leading-9 text-[#4A5565] max-w-3xl mt-6 md:mt-8">
             التزام مشترك بالخدمة والمساءلة وإعادة بناء حياة كريمة.
           </p>
         </div>
       </section>
 
       {/* Azah */}
-      <section className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-14 md:py-24">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 md:gap-16 lg:gap-20 items-start">
+      <section className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-7 pb-12 md:py-24">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-7 md:gap-16 lg:gap-20 items-start">
 
           {/* Photo */}
           <div>
@@ -47,12 +48,12 @@ export default function FoundersPageAR() {
             </h2>
 
             {/* Main NGO Title */}
-            <p className="mt-5 text-xl md:text-2xl font-bold text-[#1E2A44]">
+            <p className="mt-4 text-xl md:text-2xl font-bold text-[#1E2A44]">
               رئيسة مؤسسة عزة الخيرية
             </p>
 
             {/* Other Titles */}
-            <div className="mt-6 border-t border-[#D9D3C8] pt-6 space-y-3">
+            <div className="mt-5 border-t border-[#D9D3C8] pt-5 space-y-3">
               <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
                 الرئيسة والمؤسِّسة
               </p>
@@ -67,7 +68,7 @@ export default function FoundersPageAR() {
             </div>
 
             {/* Message */}
-            <div className="mt-10 bg-white border border-[#E5DED3] rounded-[28px] md:rounded-[36px] p-7 md:p-10 shadow-sm">
+            <div className="mt-8 md:mt-10 bg-white border border-[#E5DED3] rounded-[28px] md:rounded-[36px] p-7 md:p-10 shadow-sm">
               <p className="tracking-[0.05em] text-sm text-[#B89B5E] font-semibold mb-6">
                 رسالة من المؤسِّسة
               </p>
@@ -93,8 +94,8 @@ export default function FoundersPageAR() {
       </div>
 
       {/* Dahd */}
-      <section className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-14 md:py-24">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-16 lg:gap-20 items-start">
+      <section className="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 pt-7 pb-12 md:py-24">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-7 md:gap-16 lg:gap-20 items-start">
 
           {/* Profile */}
           <div className="order-2 lg:order-1 lg:pt-4">
@@ -105,12 +106,12 @@ export default function FoundersPageAR() {
             </h2>
 
             {/* Main NGO Title */}
-            <p className="mt-5 text-xl md:text-2xl font-bold text-[#1E2A44]">
+            <p className="mt-4 text-xl md:text-2xl font-bold text-[#1E2A44]">
               الرئيس التنفيذي للعمليات
             </p>
 
             {/* Other Titles */}
-            <div className="mt-6 border-t border-[#D9D3C8] pt-6 space-y-3">
+            <div className="mt-5 border-t border-[#D9D3C8] pt-5 space-y-3">
               <p className="text-lg md:text-xl font-semibold text-[#4A5565]">
                 الرئيس التنفيذي للعمليات والمؤسِّسة المشاركة
               </p>
@@ -121,7 +122,7 @@ export default function FoundersPageAR() {
             </div>
 
             {/* Message */}
-            <div className="mt-10 bg-white border border-[#E5DED3] rounded-[28px] md:rounded-[36px] p-7 md:p-10 shadow-sm">
+            <div className="mt-8 md:mt-10 bg-white border border-[#E5DED3] rounded-[28px] md:rounded-[36px] p-7 md:p-10 shadow-sm">
               <p className="tracking-[0.05em] text-sm text-[#B89B5E] font-semibold mb-6">
                 رسالة من المؤسِّسة المشاركة
               </p>

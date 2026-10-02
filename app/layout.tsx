@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import LanguageSwitcher from "./LanguageSwitcher";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -59,23 +60,7 @@ export default function RootLayout({
                 Contact
               </a>
 
-              <div className="flex items-center gap-3 text-sm font-semibold border-l border-[#E5DED3] pl-6">
-                <a href="/" className="hover:text-[#556F2B] transition">
-                  EN
-                </a>
-
-                <span className="text-[#CFC7BA]">|</span>
-
-                <a href="/ar" className="hover:text-[#556F2B] transition">
-                  AR
-                </a>
-
-                <span className="text-[#CFC7BA]">|</span>
-
-                <a href="/fr" className="hover:text-[#556F2B] transition">
-                  FR
-                </a>
-              </div>
+              <LanguageSwitcher />
 
               <a
                 href="/donate"
@@ -117,13 +102,7 @@ export default function RootLayout({
               </a>
             </nav>
 
-            <div className="px-5 pb-4 flex items-center gap-3 text-xs font-semibold text-[#556F2B]">
-              <a href="/">EN</a>
-              <span className="text-[#CFC7BA]">|</span>
-              <a href="/ar">AR</a>
-              <span className="text-[#CFC7BA]">|</span>
-              <a href="/fr">FR</a>
-            </div>
+            <LanguageSwitcher mobile />
           </div>
         </header>
 

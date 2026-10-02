@@ -40,27 +40,29 @@ export default function FoundersPageAR() {
 
           {/* Profile */}
           <div className="lg:pt-4">
-            <p className="tracking-[0.05em] text-xs text-[#7B826A] font-semibold mb-5">
+            <p className="tracking-[0.05em] text-sm text-[#7B826A] font-semibold mb-5">
               الرئيسة والمؤسِّسة
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] leading-tight">
+            <h2 className="text-[2.65rem] sm:text-5xl md:text-5xl font-bold tracking-[-0.03em] leading-tight">
               عزة محيي الدين مبروك
             </h2>
 
             <div className="mt-8 border-t border-[#D9D3C8] pt-6 space-y-3">
               <div>
-                <p className="font-semibold">
+                <p className="text-lg font-semibold">
                   رئيسة مؤسسة عزة الخيرية
                 </p>
               </div>
 
               <div>
-                <p className="font-semibold">المؤسِّسة</p>
+                <p className="text-lg font-semibold">
+                  المؤسِّسة
+                </p>
               </div>
 
               <div>
-                <p className="font-semibold">
+                <p className="text-lg font-semibold">
                   حرم رئيس وزراء السودان
                 </p>
               </div>
@@ -98,23 +100,23 @@ export default function FoundersPageAR() {
           
           {/* Profile */}
           <div className="order-2 lg:order-1 lg:pt-4">
-            <p className="tracking-[0.05em] text-xs text-[#7B826A] font-semibold mb-5">
+            <p className="tracking-[0.05em] text-sm text-[#7B826A] font-semibold mb-5">
               الرئيس التنفيذي للعمليات والمؤسِّسة المشاركة
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.03em] leading-tight">
+            <h2 className="text-[2.65rem] sm:text-5xl md:text-5xl font-bold tracking-[-0.03em] leading-tight">
               دعد كامل إدريس
             </h2>
 
             <div className="mt-8 border-t border-[#D9D3C8] pt-6 space-y-3">
               <div>
-                <p className="font-semibold">
+                <p className="text-lg font-semibold">
                   الرئيس التنفيذي للعمليات
                 </p>
               </div>
 
               <div>
-                <p className="font-semibold">
+                <p className="text-lg font-semibold">
                   المؤسِّسة المشاركة
                 </p>
               </div>

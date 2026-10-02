@@ -11,7 +11,7 @@ export default function FoundersPageFR() {
           </p>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-[-0.05em] leading-[1] max-w-4xl">
-            Les personnes derrière Azah.
+            Celles qui font vivre Azah.
           </h1>
 
           <p className="text-lg md:text-xl leading-8 md:leading-9 text-[#4A5565] max-w-3xl mt-8">

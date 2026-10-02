@@ -63,7 +63,7 @@ export default function HomeFR() {
               ],
               [
                 "12,7 M",
-                "Femmes et filles exposées à des risques",
+                "Femmes et filles à risque",
                 "Des millions de femmes et de filles restent exposées aux violences basées sur le genre et à d’autres risques de protection.",
               ],
               [
@@ -189,8 +189,8 @@ export default function HomeFR() {
 
           <p className="text-[#4A5565] text-base md:text-lg leading-7 md:leading-9 mb-8 md:mb-12">
             Une initiative de protection et de relèvement portée par des femmes,
-            qui soutient les femmes et les filles à travers l’hébergement, le
-            soutien psychosocial, les soins de santé, l’éducation, la
+            visant à soutenir les femmes et les filles à travers l’hébergement,
+            le soutien psychosocial, les soins de santé, l’éducation, la
             réadaptation et des parcours de réintégration.
           </p>
 

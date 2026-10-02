@@ -1,4 +1,12 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+
 export default function ContactPage() {
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+
   const contacts = [
     {
       number: "01",
@@ -26,6 +34,33 @@ export default function ContactPage() {
     },
   ];
 
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("sending");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mjykqzqz", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[#F7F4EE] text-[#1E2A44]">
 
@@ -50,12 +85,10 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-2 gap-8">
 
           {contacts.map((item) => (
-
             <div
               key={item.number}
               className="bg-white rounded-[36px] border border-[#E5DED3] p-10 shadow-sm hover:shadow-lg transition-all duration-300"
             >
-
               <div className="flex items-center gap-6 mb-10">
                 <span className="text-[#9E3B3B] text-4xl font-bold tracking-[-0.04em]">
                   {item.number}
@@ -78,9 +111,7 @@ export default function ContactPage() {
               >
                 {item.email}
               </a>
-
             </div>
-
           ))}
 
         </div>
@@ -98,7 +129,11 @@ export default function ContactPage() {
             Nous accueillons les partenariats, les collaborations et l’engagement humanitaire.
           </h2>
 
-          <form className="grid md:grid-cols-2 gap-8">
+          <form
+            onSubmit={handleSubmit}
+            className="grid md:grid-cols-2 gap-8"
+          >
+            <input type="hidden" name="language" value="French" />
 
             <div>
               <label className="block text-sm font-semibold mb-4">
@@ -107,6 +142,8 @@ export default function ContactPage() {
 
               <input
                 type="text"
+                name="full_name"
+                required
                 placeholder="Votre nom"
                 className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-6 py-5 outline-none focus:border-[#556F2B] transition"
               />
@@ -119,6 +156,8 @@ export default function ContactPage() {
 
               <input
                 type="email"
+                name="email"
+                required
                 placeholder="Votre adresse e-mail"
                 className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-6 py-5 outline-none focus:border-[#556F2B] transition"
               />
@@ -131,6 +170,8 @@ export default function ContactPage() {
 
               <input
                 type="text"
+                name="subject"
+                required
                 placeholder="Objet de votre message"
                 className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-6 py-5 outline-none focus:border-[#556F2B] transition"
               />
@@ -143,6 +184,8 @@ export default function ContactPage() {
 
               <textarea
                 rows={7}
+                name="message"
+                required
                 placeholder="Écrivez votre message..."
                 className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-6 py-5 outline-none focus:border-[#556F2B] transition resize-none"
               />
@@ -151,10 +194,25 @@ export default function ContactPage() {
             <div className="md:col-span-2 pt-2">
               <button
                 type="submit"
-                className="bg-[#1E2A44] text-white px-10 py-5 rounded-full font-semibold hover:bg-[#556F2B] transition"
+                disabled={status === "sending"}
+                className="bg-[#1E2A44] text-white px-10 py-5 rounded-full font-semibold hover:bg-[#556F2B] transition disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Envoyer le message
+                {status === "sending"
+                  ? "Envoi en cours..."
+                  : "Envoyer le message"}
               </button>
+
+              {status === "success" && (
+                <p className="mt-6 text-[#556F2B] font-semibold">
+                  Merci. Votre message a bien été envoyé.
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="mt-6 text-[#9E3B3B] font-semibold">
+                  Une erreur s’est produite. Veuillez réessayer ou nous contacter par e-mail.
+                </p>
+              )}
             </div>
 
           </form>

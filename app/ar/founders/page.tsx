@@ -40,7 +40,7 @@ export default function FoundersPageAR() {
           </div>
 
           {/* Profile */}
-          <div className="lg:pt-4">
+          <div>
 
             {/* Name First */}
             <h2 className="text-[2.9rem] sm:text-5xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.15]">
@@ -98,7 +98,7 @@ export default function FoundersPageAR() {
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 md:gap-16 lg:gap-20 items-start">
 
           {/* Profile */}
-          <div className="order-2 lg:order-1 lg:pt-4">
+          <div className="order-2 lg:order-1">
 
             {/* Name First */}
             <h2 className="text-[2.9rem] sm:text-5xl md:text-5xl font-bold tracking-[-0.03em] leading-[1.15]">

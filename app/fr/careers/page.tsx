@@ -50,7 +50,7 @@ const roles: Role[] = [
 
   { title: "Bénévole – bien-être des équipes et culture organisationnelle", department: "Ressources humaines et culture", summary: "Soutenir le bien-être des équipes, l’engagement des bénévoles, la culture organisationnelle et les mécanismes de retour d’information.", slug: "staff-wellbeing-culture-volunteer", tags: ["people", "wellbeing", "support"] },
 
-  { title: "Bénévole – suivi, évaluation et reporting", department: "Suivi et évaluation", summary: "Appuyer les outils de collecte de données, le suivi des progrès, les synthèses d’impact et les cadres de reporting.", slug: "monitoring-evaluation-reporting-volunteer", tags: ["data", "research", "reporting"] },
+  { title: "Bénévole – suivi, évaluation et rapports", department: "Suivi et évaluation", summary: "Appuyer les outils de collecte de données, le suivi des progrès, les synthèses d’impact et les cadres de rapports.", slug: "monitoring-evaluation-reporting-volunteer", tags: ["data", "research", "reporting"] },
 
   { title: "Assistant(e) de recherche", department: "Recherche et données", summary: "Mener des recherches documentaires, des analyses de politiques et du contexte humanitaire, et préparer des synthèses factuelles.", slug: "research-assistant", tags: ["research", "data", "policy"] },
 
@@ -68,7 +68,7 @@ const roles: Role[] = [
 
   { title: "Bénévole – conformité et documentation", department: "Finance et conformité", summary: "Contribuer aux dossiers de conformité, à la documentation des donateurs, à la préparation des audits et au contrôle documentaire.", slug: "compliance-documentation-volunteer", tags: ["compliance", "admin", "finance"] },
 
-  { title: "Bénévole – reporting financier aux donateurs", department: "Finance et conformité", summary: "Appuyer le reporting financier destiné aux donateurs, les notes budgétaires, les explications de dépenses et la mise en forme des rapports.", slug: "donor-financial-reporting-volunteer", tags: ["finance", "reporting", "fundraising"] },
+  { title: "Bénévole – rapports financiers destinés aux donateurs", department: "Finance et conformité", summary: "Appuyer le rapports financiers destinés aux donateurs, les notes budgétaires, les explications de dépenses et la mise en forme des rapports.", slug: "donor-financial-reporting-volunteer", tags: ["finance", "reporting", "fundraising"] },
 
   { title: "Bénévole – chargé(e) des partenariats", department: "Partenariats", summary: "Appuyer la cartographie des partenaires, la prise de contact institutionnelle, le suivi des relations et les notes de collaboration.", slug: "partnerships-officer-volunteer", tags: ["partnerships", "outreach", "coordination"] },
 
@@ -88,7 +88,7 @@ const roles: Role[] = [
 
   { title: "Designer UX/UI", department: "Informatique et numérique", summary: "Améliorer l’expérience utilisateur du site, les parcours de candidature, l’accessibilité et la cohérence visuelle.", slug: "ux-ui-designer", tags: ["design", "technical", "web"] },
 
-  { title: "Bénévole – support informatique", department: "Informatique et numérique", summary: "Contribuer au dépannage numérique, à la configuration des e-mails, au support des appareils et à l’accompagnement sur les systèmes internes.", slug: "it-support-volunteer", tags: ["technical", "support"] },
+  { title: "Bénévole – assistance informatique", department: "Informatique et numérique", summary: "Contribuer au dépannage numérique, à la configuration des e-mails, au support des appareils et à l’accompagnement sur les systèmes internes.", slug: "it-support-volunteer", tags: ["technical", "support"] },
 
   { title: "Responsable CRM / bases de données", department: "Informatique et numérique", summary: "Gérer et structurer les bases de données relatives aux donateurs, bénévoles, bénéficiaires et partenaires.", slug: "crm-database-manager", tags: ["technical", "data", "admin"] },
 
@@ -102,7 +102,7 @@ const roles: Role[] = [
 
   { title: "Responsable des réseaux sociaux", department: "Communication", summary: "Appuyer les calendriers éditoriaux, la stratégie des plateformes, la rédaction des publications, l’engagement du public et la programmation.", slug: "social-media-manager", tags: ["communications", "creative", "social"] },
 
-  { title: "Rédacteur(trice) de contenu", department: "Communication", summary: "Rédiger des contenus pour le site web, des récits de projets, des newsletters, des légendes et des supports de communication.", slug: "content-writer", tags: ["communications", "writing", "creative"] },
+  { title: "Rédacteur(trice) de contenu", department: "Communication", summary: "Rédiger des contenus pour le site web, des récits de projets, des lettres d’information, des légendes et des supports de communication.", slug: "content-writer", tags: ["communications", "writing", "creative"] },
 
   { title: "Bénévole – récits et communication humanitaires", department: "Communication", summary: "Transformer les informations du terrain, les activités des projets et les récits humains en communications respectueuses de la dignité.", slug: "humanitarian-storytelling-volunteer", tags: ["communications", "writing", "creative"] },
 
@@ -120,7 +120,7 @@ const roles: Role[] = [
 
   { title: "Bénévole – protection et gestion de cas", department: "Protection", summary: "Appuyer les programmes sensibles aux enjeux de protection, la cartographie des orientations, les outils de gestion de cas et les parcours sécurisés.", slug: "protection-case-management-volunteer", tags: ["protection", "support", "field"] },
 
-  { title: "Bénévole – sauvegarde et appui à la protection", department: "Protection", summary: "Contribuer aux politiques de sauvegarde, à l’atténuation des risques, aux outils de confidentialité et aux orientations en matière de protection.", slug: "safeguarding-protection-support-volunteer", tags: ["protection", "compliance", "support"] },
+  { title: "Bénévole – protection et prévention des abus", department: "Protection", summary: "Contribuer aux politiques de sauvegarde, à l’atténuation des risques, aux outils de confidentialité et aux orientations en matière de protection.", slug: "safeguarding-protection-support-volunteer", tags: ["protection", "compliance", "support"] },
 
   { title: "Bénévole – protection de l’enfance", department: "Protection", summary: "Appuyer les programmes adaptés aux enfants, les orientations vers l’éducation, les espaces sûrs et les activités de protection.", slug: "child-protection-volunteer", tags: ["protection", "children", "support"] },
 
@@ -142,7 +142,7 @@ const roles: Role[] = [
 
   { title: "Bénévole – soutien aux personnes âgées", department: "Soins aux personnes âgées", summary: "Appuyer les soins aux personnes âgées, l’inclusion sociale, la coordination des besoins essentiels, la dignité et le bien-être.", slug: "elderly-care-support-volunteer", tags: ["elderly", "support", "care"] },
 
-  { title: "Bénévole – soutien au rétablissement des addictions", department: "Réadaptation", summary: "Appuyer la planification de la réadaptation, les ressources de rétablissement, la réduction de la stigmatisation et les parcours de réintégration.", slug: "substance-abuse-recovery-support-volunteer", tags: ["rehabilitation", "support", "health"] },
+  { title: "Bénévole – soutien au rétablissement en matière d’addictions", department: "Réadaptation", summary: "Appuyer la planification de la réadaptation, les ressources de rétablissement, la réduction de la stigmatisation et les parcours de réintégration.", slug: "substance-abuse-recovery-support-volunteer", tags: ["rehabilitation", "support", "health"] },
 
   { title: "Bénévole – santé mentale et soutien psychosocial", department: "MHPSS", summary: "Contribuer à la planification du soutien psychosocial, aux ressources tenant compte des traumatismes, aux orientations et aux activités de bien-être.", slug: "mental-health-psychosocial-support-volunteer", tags: ["mental-health", "support", "care"] },
 
@@ -152,11 +152,11 @@ const roles: Role[] = [
 
   { title: "Formateur(trice) en compétences numériques", department: "Éducation", summary: "Enseigner ou appuyer les compétences numériques, l’apprentissage en ligne, l’utilisation de base de l’informatique et l’autonomie numérique.", slug: "digital-literacy-trainer", tags: ["education", "technical", "training"] },
 
-  { title: "Coordinateur(trice) de l’engagement des jeunes", department: "Jeunesse et éducation", summary: "Appuyer la mobilisation des jeunes, les activités dirigées par les jeunes, les programmes de leadership et les plans d’engagement.", slug: "youth-engagement-coordinator", tags: ["youth", "education", "community"] },
+  { title: "Coordinateur(trice) de l’engagement des jeunes", department: "Jeunesse et éducation", summary: "Appuyer la mobilisation des jeunes, les activités dirigées par les jeunes, les programmes de développement du leadership et les plans d’engagement.", slug: "youth-engagement-coordinator", tags: ["youth", "education", "community"] },
 
   { title: "Bénévole – appui aux bourses d’études", department: "Jeunesse et éducation", summary: "Appuyer la recherche de bourses, l’accompagnement des candidatures, les parcours éducatifs et le soutien aux étudiants.", slug: "scholarship-support-volunteer", tags: ["education", "youth", "research"] },
 
-  { title: "Bénévole – programme de mentorat", department: "Jeunesse et éducation", summary: "Appuyer la mise en relation mentors-mentorés, la coordination des mentors, le développement des jeunes et le suivi de l’apprentissage.", slug: "mentorship-programme-volunteer", tags: ["youth", "education", "support"] },
+  { title: "Bénévole – programme de mentorat", department: "Jeunesse et éducation", summary: "Appuyer la mise en relation mentors et mentorés, la coordination des mentors, le développement des jeunes et le suivi de l’apprentissage.", slug: "mentorship-programme-volunteer", tags: ["youth", "education", "support"] },
 
   { title: "Bénévole – développement professionnel", department: "Jeunesse et éducation", summary: "Aider les bénéficiaires et les jeunes à préparer leurs CV, entretiens, projets professionnels et compétences professionnelles.", slug: "career-development-volunteer", tags: ["youth", "career", "support"] },
 
@@ -172,7 +172,7 @@ const roles: Role[] = [
 
   { title: "Bénévole – appui aux distributions", department: "Communauté et opérations de terrain", summary: "Appuyer la distribution de fournitures, de kits, de denrées alimentaires, d’articles d’hygiène et d’aide ménagère essentielle.", slug: "distribution-support-volunteer", tags: ["community", "operations", "field"] },
 
-  { title: "Bénévole – mentorat par les pairs et leadership des personnes survivantes", department: "Communauté et opérations de terrain", summary: "Appuyer le mentorat par les pairs, les initiatives menées par les personnes survivantes, les activités de réintégration et les parcours de leadership.", slug: "peer-mentorship-survivor-leadership-volunteer", tags: ["community", "support", "protection"] },
+  { title: "Bénévole – mentorat par les pairs et leadership des survivant(e)s", department: "Communauté et opérations de terrain", summary: "Appuyer le mentorat par les pairs, les initiatives menées par les personnes survivantes, les activités de réintégration et les parcours de leadership.", slug: "peer-mentorship-survivor-leadership-volunteer", tags: ["community", "support", "protection"] },
 
   { title: "Bénévole – réintégration et suivi", department: "Communauté et opérations de terrain", summary: "Contribuer aux systèmes de suivi, aux parcours vers l’autonomie, à la recherche familiale et au soutien à la réintégration.", slug: "reintegration-follow-up-volunteer", tags: ["community", "support", "field"] },
 
@@ -196,7 +196,7 @@ function getRoleActivities(role: Role) {
 
   if (title.includes("réseaux sociaux")) return ["Créer des calendriers éditoriaux hebdomadaires.", "Rédiger des légendes et des publications de campagne.", "Suivre l’engagement et les retours de la communauté.", "Coordonner avec les bénévoles chargés du design et des récits."];
 
-  if (title.includes("rédacteur")) return ["Rédiger les contenus du site et des projets.", "Préparer des newsletters et des légendes.", "Transformer les mises à jour des programmes en récits structurés.", "Réviser les contenus afin d’assurer clarté, dignité et cohérence."];
+  if (title.includes("rédacteur")) return ["Rédiger les contenus du site et des projets.", "Préparer des lettres d’information et des légendes.", "Transformer les mises à jour des programmes en récits structurés.", "Réviser les contenus afin d’assurer clarté, dignité et cohérence."];
 
   if (title.includes("traducteur")) return ["Traduire des contenus arabe-anglais.", "Vérifier le ton et l’exactitude.", "Appuyer les rapports et publications bilingues.", "Veiller à la cohérence de la terminologie humanitaire."];
 

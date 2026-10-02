@@ -96,20 +96,22 @@ export default function AboutPageFR() {
 
   return (
     <main className="min-h-screen bg-[#F7F4EE] text-[#1E2A44]">
-      {/* HERO IMAGE */}
+
+      {/* HERO */}
       <section className="relative w-full h-[540px] overflow-hidden bg-[#1E2A44]">
         <Image
-          src="/sudan-hero.jpg"
+          src="/sudan-ero.png"
           alt="Réponse humanitaire au Soudan"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
         />
 
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex items-end pb-16">
           <div className="max-w-5xl">
+
             <h1 className="text-4xl md:text-6xl leading-tight font-extrabold tracking-[-0.04em] text-white mb-8">
               <span className="bg-[#1E6C9F] px-2 box-decoration-clone">
                 Répondre à la crise humanitaire au Soudan
@@ -121,7 +123,7 @@ export default function AboutPageFR() {
 
             <div className="flex items-center gap-4">
               <a
-                href="/fr/about"
+                href="/fr/projects"
                 className="border-2 border-white text-white px-6 py-3 rounded-md text-sm font-bold hover:bg-white hover:text-[#1E2A44] transition"
               >
                 EN SAVOIR PLUS
@@ -134,6 +136,7 @@ export default function AboutPageFR() {
                 FAIRE UN DON
               </a>
             </div>
+
           </div>
         </div>
       </section>
@@ -141,6 +144,7 @@ export default function AboutPageFR() {
       {/* STATS */}
       <section className="max-w-7xl mx-auto px-8 py-24">
         <div className="grid md:grid-cols-3 gap-6">
+
           {stats.map((item) => (
             <div
               key={item.title}
@@ -161,13 +165,16 @@ export default function AboutPageFR() {
               </p>
             </div>
           ))}
+
         </div>
       </section>
 
       {/* SLIDESHOW */}
       <section className="max-w-7xl mx-auto px-8 pb-28">
         <div className="relative overflow-hidden rounded-[40px] bg-white shadow-xl border border-[#E5DED3]">
+
           <div className="grid lg:grid-cols-2 items-center">
+
             <div className="relative h-[500px]">
               <Image
                 src={sectors[currentSlide].image}
@@ -178,6 +185,7 @@ export default function AboutPageFR() {
             </div>
 
             <div className="p-12 md:p-16">
+
               <p className="uppercase tracking-[0.35em] text-sm text-[#556F2B] mb-8">
                 Secteurs humanitaires
               </p>
@@ -193,6 +201,7 @@ export default function AboutPageFR() {
               <div className="flex items-center gap-4">
                 <button
                   onClick={prevSlide}
+                  aria-label="Secteur précédent"
                   className="w-14 h-14 rounded-full bg-[#F1ECE2] hover:bg-[#556F2B] hover:text-white transition-all text-2xl"
                 >
                   ←
@@ -200,6 +209,7 @@ export default function AboutPageFR() {
 
                 <button
                   onClick={nextSlide}
+                  aria-label="Secteur suivant"
                   className="w-14 h-14 rounded-full bg-[#1E2A44] text-white hover:opacity-90 transition-all text-2xl"
                 >
                   →
@@ -211,6 +221,7 @@ export default function AboutPageFR() {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
+                    aria-label={`Afficher le secteur ${index + 1}`}
                     className={`h-2 rounded-full transition-all ${
                       currentSlide === index
                         ? "bg-[#556F2B] w-10"
@@ -219,6 +230,7 @@ export default function AboutPageFR() {
                   />
                 ))}
               </div>
+
             </div>
           </div>
         </div>
@@ -227,6 +239,7 @@ export default function AboutPageFR() {
       {/* FOUNDATION */}
       <section className="max-w-7xl mx-auto px-8 pb-28">
         <div className="bg-[#1E2A44] text-white rounded-[42px] p-12 md:p-20">
+
           <p className="uppercase tracking-[0.35em] text-sm text-[#D4BE8A] mb-8">
             Notre fondation
           </p>
@@ -244,11 +257,13 @@ export default function AboutPageFR() {
             sécurité, la participation communautaire et le renforcement durable
             de la résilience.
           </p>
+
         </div>
       </section>
 
       {/* APPROACH */}
       <section className="max-w-7xl mx-auto px-8 pb-20">
+
         <p className="uppercase tracking-[0.35em] text-sm text-[#556F2B] mb-8">
           Notre approche
         </p>
@@ -258,6 +273,7 @@ export default function AboutPageFR() {
         </h2>
 
         <div className="divide-y divide-[#DDD4C6] border-y border-[#DDD4C6]">
+
           {approach.map((item, index) => (
             <div
               key={item.title}
@@ -276,12 +292,15 @@ export default function AboutPageFR() {
               </p>
             </div>
           ))}
+
         </div>
       </section>
 
       {/* INTEGRATED APPROACH */}
       <section className="max-w-7xl mx-auto px-8 pb-32">
+
         <div className="bg-[#1E2A44] text-white rounded-[42px] p-12 md:p-20">
+
           <p className="uppercase tracking-[0.35em] text-sm text-[#D4BE8A] mb-8">
             Approche intégrée
           </p>
@@ -299,8 +318,10 @@ export default function AboutPageFR() {
             à reconstruire leur vie dans la sécurité, avec des perspectives
             d’avenir et de l’espoir.
           </p>
+
         </div>
       </section>
+
     </main>
   );
 }

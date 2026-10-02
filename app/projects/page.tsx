@@ -17,7 +17,7 @@ export default function ProjectsPage() {
     },
     {
       title: "Children’s Cancer Hospital",
-      status: "Planning Phase",
+      status: "Active",
       tag: "Healthcare Project",
       description:
         "A specialized healthcare project dedicated to improving access to cancer diagnosis, treatment, care, and psychosocial support for children affected by cancer in Sudan.",

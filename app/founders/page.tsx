@@ -28,7 +28,7 @@ export default function FoundersPage() {
           <div>
             <div className="relative w-full aspect-[4/5] rounded-[28px] md:rounded-[40px] overflow-hidden bg-[#E7E2D8]">
               <Image
-                src="/azah-mabrouk.jpg"
+                src="/azah-founder-photo.png"
                 alt="Azah Mohielden Mabrouk"
                 fill
                 className="object-cover"
@@ -169,7 +169,7 @@ Reach out, if you have an idea, a skill you want to contribute, are part of an o
           <div className="order-1 lg:order-2">
             <div className="relative w-full aspect-[4/5] rounded-[28px] md:rounded-[40px] overflow-hidden bg-[#E7E2D8]">
               <Image
-                src="/dahd-idris.jpg"
+                src="/dahd-founder-photo.jpg"
                 alt="Dahd Kamil Idris"
                 fill
                 className="object-cover"

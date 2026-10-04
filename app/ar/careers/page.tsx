@@ -399,6 +399,34 @@ function ApplicationModal({
 }) {
   const [educationCount, setEducationCount] = useState(1);
   const [experienceCount, setExperienceCount] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    const payload = new FormData(event.currentTarget);
+    payload.append("role", role.title);
+    payload.append("language", "Arabic");
+
+    try {
+      const response = await fetch("https://formspree.io/f/xppwkzjk", {
+        method: "POST",
+        body: payload,
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("Formspree submission failed");
+      setSubmitStatus("success");
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const activities = getRoleActivities(role);
   const outcome = getRoleOutcome(role);
@@ -466,7 +494,7 @@ function ApplicationModal({
               ))}
             </div>
 
-            <form className="bg-white rounded-[32px] border border-[#E5DED3] p-8 md:p-10">
+            <form onSubmit={handleSubmit} className="bg-white rounded-[32px] border border-[#E5DED3] p-8 md:p-10">
               {step === 1 && (
                 <div>
                   <h3 className="text-3xl font-bold mb-8">البيانات الشخصية</h3>
@@ -584,11 +612,23 @@ function ApplicationModal({
                     حفظ ومتابعة
                   </button>
                 ) : (
-                  <button type="button" className="px-8 py-4 rounded-full bg-[#556F2B] text-white hover:opacity-90 transition">
-                    إرسال الطلب
+                  <button type="submit" disabled={isSubmitting} className="px-8 py-4 rounded-full bg-[#556F2B] text-white hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed">
+                    {isSubmitting ? "جارٍ الإرسال..." : "إرسال الطلب"}
                   </button>
                 )}
               </div>
+
+              {submitStatus === "success" && (
+                <div className="mt-6 rounded-2xl border border-[#556F2B] bg-[#F7F4EE] px-5 py-4 text-[#556F2B] font-semibold">
+                  تم إرسال طلبك بنجاح. شكرًا لتقديمك إلى مؤسسة أزاه الخيرية.
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="mt-6 rounded-2xl border border-red-300 bg-red-50 px-5 py-4 text-red-700 font-semibold">
+                  تعذر إرسال طلبك. يرجى المحاولة مرة أخرى.
+                </div>
+              )}
             </form>
           </div>
         </div>
@@ -601,7 +641,7 @@ function Field({ label, placeholder }: { label: string; placeholder: string }) {
   return (
     <div>
       <label className="block text-sm font-semibold mb-3">{label}</label>
-      <input type="text" placeholder={placeholder} className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition text-right" />
+      <input name={label} type={label.includes("البريد") ? "email" : "text"} placeholder={placeholder} className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition text-right" />
     </div>
   );
 }
@@ -610,129 +650,7 @@ function TextArea({ label, placeholder }: { label: string; placeholder: string }
   return (
     <div className="md:col-span-2 mb-6">
       <label className="block text-sm font-semibold mb-3">{label}</label>
-      <textarea rows={5} placeholder={placeholder} className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition resize-none text-right" />
+      <textarea name={label} rows={5} placeholder={placeholder} className="w-full bg-[#F7F4EE] border border-[#E5DED3] rounded-2xl px-5 py-4 outline-none focus:border-[#556F2B] transition resize-none text-right" />
     </div>
-  );
-
-  return (
-    <main
-      dir="rtl"
-      className="min-h-screen bg-[#F7F4EE] text-[#1E2A44]"
-    >
-      <section className="max-w-7xl mx-auto px-8 pt-24 pb-20 text-right">
-        <p className="uppercase tracking-[0.35em] text-sm text-[#556F2B] mb-8">
-          الوظائف والمتطوعون
-        </p>
-
-        <h1 className="text-5xl md:text-7xl leading-tight font-bold tracking-[-0.04em] max-w-6xl mb-10">
-          انضم إلى شبكة متطوعي عزة وساهم في بناء أثر إنساني حقيقي.
-        </h1>
-
-        <p className="text-xl leading-9 text-[#4A5565] max-w-5xl">
-          استكشف فرص التطوع في مجالات القيادة، البرامج، الحماية،
-          الصحة، الإعلام، الأنظمة الرقمية، العمليات، الشراكات،
-          والتعافي المجتمعي.
-        </p>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-8 pb-20">
-        <div className="bg-[#1E2A44] text-white rounded-[40px] p-10 md:p-14 text-right">
-          <p className="uppercase tracking-[0.3em] text-sm text-[#D4BE8A] mb-6">
-            اختبار مطابقة الوظائف
-          </p>
-
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-8">
-            غير متأكد أين يناسبك دورك؟ دعنا نساعدك.
-          </h2>
-
-          <p className="text-lg leading-9 text-white/80 max-w-4xl">
-            ستساعدك هذه الصفحة في استكشاف الفرص التطوعية المناسبة
-            بناءً على اهتماماتك، مهاراتك، وخبراتك.
-          </p>
-        </div>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-8 pb-20 text-right">
-        <div className="grid md:grid-cols-2 gap-8">
-
-          <div className="bg-white border border-[#E5DED3] rounded-[36px] p-8">
-            <p className="uppercase tracking-[0.25em] text-sm text-[#556F2B] mb-5">
-              المكتب التنفيذي
-            </p>
-
-            <h3 className="text-3xl font-bold leading-tight mb-6">
-              مساعد المدير التنفيذي / المؤسس المشارك
-            </h3>
-
-            <p className="text-[#4A5565] leading-8 mb-8">
-              دعم التنسيق التنفيذي، الجداول الزمنية، المتابعة،
-              التوثيق، والتخطيط التشغيلي لقيادة مؤسسة عزة.
-            </p>
-
-            <button className="bg-[#1E2A44] text-white px-6 py-4 rounded-full hover:bg-[#556F2B] transition">
-              عرض التفاصيل والتقديم
-            </button>
-          </div>
-
-          <div className="bg-white border border-[#E5DED3] rounded-[36px] p-8">
-            <p className="uppercase tracking-[0.25em] text-sm text-[#556F2B] mb-5">
-              الإعلام والتواصل
-            </p>
-
-            <h3 className="text-3xl font-bold leading-tight mb-6">
-              مدير وسائل التواصل الاجتماعي
-            </h3>
-
-            <p className="text-[#4A5565] leading-8 mb-8">
-              إدارة المحتوى الرقمي، تخطيط الحملات، التفاعل مع الجمهور،
-              وجدولة المنشورات الخاصة بالمؤسسة.
-            </p>
-
-            <button className="bg-[#1E2A44] text-white px-6 py-4 rounded-full hover:bg-[#556F2B] transition">
-              عرض التفاصيل والتقديم
-            </button>
-          </div>
-
-          <div className="bg-white border border-[#E5DED3] rounded-[36px] p-8">
-            <p className="uppercase tracking-[0.25em] text-sm text-[#556F2B] mb-5">
-              الصحة
-            </p>
-
-            <h3 className="text-3xl font-bold leading-tight mb-6">
-              متطوع الصحة العامة
-            </h3>
-
-            <p className="text-[#4A5565] leading-8 mb-8">
-              دعم أنشطة التوعية الصحية، التخطيط المجتمعي،
-              والإحالات والخدمات الصحية الأساسية.
-            </p>
-
-            <button className="bg-[#1E2A44] text-white px-6 py-4 rounded-full hover:bg-[#556F2B] transition">
-              عرض التفاصيل والتقديم
-            </button>
-          </div>
-
-          <div className="bg-white border border-[#E5DED3] rounded-[36px] p-8">
-            <p className="uppercase tracking-[0.25em] text-sm text-[#556F2B] mb-5">
-              التقنية والأنظمة الرقمية
-            </p>
-
-            <h3 className="text-3xl font-bold leading-tight mb-6">
-              مطور واجهات أمامية
-            </h3>
-
-            <p className="text-[#4A5565] leading-8 mb-8">
-              تطوير وتحسين صفحات الموقع، تجربة المستخدم،
-              والتصميم المتجاوب عبر مختلف الأجهزة.
-            </p>
-
-            <button className="bg-[#1E2A44] text-white px-6 py-4 rounded-full hover:bg-[#556F2B] transition">
-              عرض التفاصيل والتقديم
-            </button>
-          </div>
-
-        </div>
-      </section>
-    </main>
   );
 }
